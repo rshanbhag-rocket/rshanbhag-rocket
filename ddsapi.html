@@ -1,0 +1,42 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en-us"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2023"><meta name="copyright" content="(C) Copyright 2023"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="topic"><meta name="DC.subject" content="DDS,API,Distributed Data Server,XML API,HTTP API of the DDS"><meta name="keywords" content="DDS, API, Distributed Data Server, XML API, HTTP API of the DDS"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="ddsapi"><meta name="DC.language" content="en-us"><title>Accessing performance data using the RMF Distributed Data Server</title><link rel="stylesheet" type="text/css" href="commonltr.css"></head><body id="ddsapi"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+<h1 class="title topictitle1" id="ariaid-title1">Accessing performance data using the RMF Distributed
+Data Server</h1>
+
+<div class="body">
+
+<p class="p">With the two flavors of the Distributed Data Server (GPMSERVE and GPM4CIM, also known as RMF XP),
+RMF™ offers a solution to monitor the performance of systems in
+heterogeneous environments. Application programs that want to retrieve performance data can use the
+HTTP API of the Distributed Data Server (DDS). The DDS returns the requested performance data as a
+structured XML document. 
+</p>
+<ul class="ul">
+<li class="li">For systems in a z/OS environment, the DDS GPMSERVE component gathers data from the RMF instances running on the sysplex members. An application
+program can request selected performance metrics or complete reports from the DDS. Thus, exploiters
+of this HTTP API have instant access to a great variety of z/OS performance metrics, including
+short-term information as well as long-term historical data.</li>
+<li class="li">The HTTP API of the DDS can also
+                    serve requests for AIX® and Linux™ performance data, which are directed against
+                    an active GPM4CIM instance. RMF XP supports the following operating systems: <ul class="ul" compact>
+                         <li class="li">AIX on System p®</li>
+                         <li class="li">Linux on System x®</li>
+                         <li class="li">Linux on System z®</li>
+                         
+                    </ul>
+                    <p class="p">GPM4CIM is the core component of RMF XP. For detailed information about RMF
+                         XP, see z/OS Resource Measurement Facility User's Guide.</p></li>
+</ul>
+<figure class="fig fignone" id="ddsapi__erbb7p02"><figcaption><span class="fig--title-label">Figure 1. </span>Example: How to use the DDS HTTP API in a z/OS environment</figcaption>
+
+</figure>
+<p class="p"><a class="xref" href="#ddsapi__erbb7p02">Figure 1</a> illustrates how to use the DDS HTTP API in a z/OS
+environment, where requests must be sent to the GPMSERVE component of the DDS. Likewise, in a
+heterogeneous AIX/Linux environment, you send your HTTP request to
+the corresponding GPM4CIM instance of the DDS. Each instance of GPMSERVE or GPM4CIM uses a unique
+port to listen for incoming requests. The returned XML documents have the same syntax for both
+Distributed Data Server components.</p>
+
+</div>
+</article></main></body></html>

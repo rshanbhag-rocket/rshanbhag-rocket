@@ -1,21 +1,26 @@
 <!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" data-whc_version="24.1" lang="en" dir="ltr">
-    <head><link rel="shortcut icon" href="favicon.png"/><link rel="icon" href="favicon.png"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="wh-path2root" content=""/><title>Test topics to check in GitHub pages</title>
+    <head><link rel="shortcut icon" href="favicon.png"/><link rel="icon" href="favicon.png"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="wh-path2root" content=""/><title>Search Results - Test topics to check in GitHub pages</title>
         
         
-                
         
+        
+        
+    <script src="./oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"></script>
+    
     <link rel="stylesheet" href="./oxygen-webhelp/lib/jquery-ui/jquery-ui.min.css"/>
     
     <!-- Latest compiled and minified Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="./oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="./oxygen-webhelp/lib/bootstrap/css/bootstrap.min.css"/>
     
-    <!-- Template default styles  -->
-    <link rel="stylesheet" type="text/css" href="./oxygen-webhelp/app/main-page.css?buildId=2022110310"/>
+    <link rel="stylesheet" type="text/css" href="./oxygen-webhelp/app/search-page.css?buildId=2022110310"/>
     
+    <style>
+        .wh_search_results {
+        min-height: 40%;
+        }
+    </style>
     
-    <script src="./oxygen-webhelp/lib/jquery/jquery-3.5.1.min.js"></script>
-    
-    <script data-main="./oxygen-webhelp/app/main-page.js" src="./oxygen-webhelp/lib/requirejs/require.js"></script>
+    <script data-main="./oxygen-webhelp/app/search-page.js" src="./oxygen-webhelp/lib/requirejs/require.js"></script>
     
 
         <link rel="stylesheet" type="text/css" href="oxygen-webhelp/template/orange.css?buildId=2022110310"/><link rel="stylesheet" type="text/css" href="oxygen-webhelp/template/notes.css?buildId=2022110310"/>
@@ -23,11 +28,10 @@
         
         
     </head>
-    <body class="wh_main_page">
-        <a href="#content" class="sr-only sr-only-focusable">
-            Jump to main content
+    <body class="wh_search_page">
+        <a href="#results" class="sr-only sr-only-focusable">
+            Jump to search results
         </a>
-        
         
         
         
@@ -39,7 +43,7 @@
                 <div class="wh_logo_and_publication_title">
                     
                     <a href="index.html" class=" wh_logo d-none d-sm-block "><img src="logo.png" alt="Test topics to check in GitHub pages"/></a>
-                    <div class=" wh_publication_title "><a href="index.html"><span xmlns="" class="title">Test topics to check in GitHub pages</span></a></div>
+                    <div class=" wh_publication_title "><a href="index.html"><span class="title">Test topics to check in GitHub pages</span></a></div>
                     
                 </div>
                 
@@ -59,16 +63,13 @@
 </header>
         
         
-                
+         
         
-        <div class=" wh_search_input navbar-form wh_main_page_search search " role="form">
+        <div class=" wh_search_input navbar-form wh_search_page_search search " role="form">
             
             
             
-            
-            <div class="wh_welcome"></div>          
             <form id="searchForm" method="get" role="search" action="search.html"><div><input type="search" placeholder="Search " class="wh_search_textfield" id="textToSearch" name="searchQuery" aria-label="Search query" required="required"/><button type="submit" class="wh_search_button" aria-label="Search"><span class="search_input_text">Search</span></button></div></form>
-            
             
             
             
@@ -77,12 +78,41 @@
         
         
         
-        <div class="wh_content_area " id="content">
-            
-            <div class="container-fluid wh_content_flex_container">
+        <div class="container-fluid wh_content_area" id="results">
+            <div class="row">
                 
-                <div class=" wh_main_page_toc "><div class=" wh_main_page_toc_accordion_header "><span role="heading" aria-level="1" id="chap1-d156e11-heading"><span role="button" aria-expanded="false" class="header-button" aria-controls="chap1-d156e11-entries" tabindex="0"></span><span class="topicref"><a href="chap1.html" data-id="chap1">RMF™ - your performance management tool</a></span></span></div><div class=" wh_main_page_toc_accordion_entries " id="chap1-d156e11-entries" role="region" aria-labelledby="chap1-d156e11-heading"><div class=" wh_main_page_toc_entry "><span class="topicref"><a href="erbb20025.html" data-id="erbb200-gen25">Gathering data</a></span></div></div></div>
-                
+        <div class="wh_search_results col-xs-12 col-sm-12 col-md-12 col-lg-12" id="searchResults">
+            <div class="searchPreload">
+                <ul>
+                    <li>
+                        <div class="fakeResult">
+                            <div class="fakeTitle"><!-- --></div>
+                            <div class="fakeText"><!-- --></div>
+                            <div class="fakeText"><!-- --></div>
+                            <div class="fakeText"><!-- --></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="fakeResult">
+                            <div class="fakeTitle"><!-- --></div>
+                            <div class="fakeText"><!-- --></div>
+                            <div class="fakeText"><!-- --></div>
+                            <div class="fakeText"><!-- --></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="fakeResult">
+                            <div class="fakeTitle"><!-- --></div>
+                            <div class="fakeText"><!-- --></div>
+                            <div class="fakeText"><!-- --></div>
+                            <div class="fakeText"><!-- --></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="wh-search-pagination" class="wh-search-pagination col-xs-12 col-sm-12 col-md-12 col-lg-12"></div>
+    
             </div>
         </div>
         
@@ -100,4 +130,5 @@
         
         
     </body>
+     
 </html>

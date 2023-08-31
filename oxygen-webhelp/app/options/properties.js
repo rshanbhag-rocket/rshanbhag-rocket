@@ -1,5 +1,6 @@
 define(
-  { "default.language" : "en",
+  { "args.hide.parent.link" : "no",
+    "default.language" : "en",
     "use.stemming" : "false",
     "webhelp.enable.search.autocomplete" : "true",
     "webhelp.enable.search.kuromoji.js" : "true",

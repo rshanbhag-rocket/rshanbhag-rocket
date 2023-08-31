@@ -1,15 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
    <url>
-      <loc>chap1.html</loc>
-      <lastmod>2023-08-10T12:34:24Z</lastmod>
+      <loc>rn.html</loc>
+      <lastmod>2023-08-31T12:36:38Z</lastmod>
    </url>
    <url>
-      <loc>erbb20025.html</loc>
-      <lastmod>2023-08-10T12:34:24Z</lastmod>
+      <loc>visual_grafana.html</loc>
+      <lastmod>2023-08-31T12:36:38Z</lastmod>
    </url>
    <url>
-      <loc>erbb20031.html</loc>
-      <lastmod>2023-08-10T12:34:24Z</lastmod>
+      <loc>rmf_plugin.html</loc>
+      <lastmod>2023-08-31T12:36:38Z</lastmod>
+   </url>
+   <url>
+      <loc>task_flows_view_report.html</loc>
+      <lastmod>2023-08-31T12:36:38Z</lastmod>
+   </url>
+   <url>
+      <loc>install_grafana_plugin.html</loc>
+      <lastmod>2023-08-31T12:36:38Z</lastmod>
+   </url>
+   <url>
+      <loc>create_datasources.html</loc>
+      <lastmod>2023-08-31T12:36:38Z</lastmod>
+   </url>
+   <url>
+      <loc>create_dashboards.html</loc>
+      <lastmod>2023-08-31T12:36:38Z</lastmod>
    </url>
 </urlset>

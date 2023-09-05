@@ -1,14 +1,16 @@
-define(function() {var keywords=[{w:"Creating",p:["p0","p1"]},{w:"dashboards",p:["p0"]},{w:"RMF",p:["p1","p5","p7","p8"]},{w:"data",p:["p1"]},{w:"sources",p:["p1"]},{w:"Context",p:["p2"]},{w:"Sensitive",p:["p2"]},{w:"Help",p:["p2"]},{w:"Installing",p:["p3"]},{w:"the",p:["p3"]},{w:"plugin",p:["p3","p5"]},{w:"on",p:["p3"]},{w:"Grafana",p:["p3","p5","p8"]},{w:"Query",p:["p4"]},{w:"languages",p:["p4"]},{w:"IBM",p:["p5"]},{w:"for",p:["p5","p7"]},{w:"z/OS",p:["p5"]},{w:"App",p:["p5"]},{w:"Release",p:["p6"]},{w:"notes",p:["p6"]},{w:"Task",p:["p7"]},{w:"flows",p:["p7"]},{w:"viewing",p:["p7"]},{w:"Monitor",p:["p7","p8"]},{w:"III",p:["p7","p8"]},{w:"metrics",p:["p7","p8"]},{w:"Visualization",p:["p8"]},{w:"of",p:["p8"]},{w:"in",p:["p8"]}];
+define(function() {var keywords=[{w:"Applying",p:["p0","p1"]},{w:"transformation",p:["p0"]},{w:"to",p:["p0","p1"]},{w:"data",p:["p0","p1","p3"]},{w:"visualization",p:["p1","p10"]},{w:"Creating",p:["p2","p3"]},{w:"dashboards",p:["p2","p6"]},{w:"RMF",p:["p3","p8","p10"]},{w:"sources",p:["p3"]},{w:"Context",p:["p4"]},{w:"Sensitive",p:["p4"]},{w:"Help",p:["p4"]},{w:"Installing",p:["p5"]},{w:"the",p:["p5"]},{w:"plugin",p:["p5","p8"]},{w:"on",p:["p5"]},{w:"Grafana",p:["p5","p8","p10"]},{w:"Managing",p:["p6"]},{w:"Query",p:["p7"]},{w:"languages",p:["p7"]},{w:"IBM",p:["p8"]},{w:"for",p:["p8"]},{w:"z/OS",p:["p8"]},{w:"App",p:["p8"]},{w:"Release",p:["p9"]},{w:"notes",p:["p9"]},{w:"of",p:["p10"]},{w:"Monitor",p:["p10"]},{w:"III",p:["p10"]},{w:"metrics",p:["p10"]},{w:"in",p:["p10"]}];
 var ph={};
-ph["p0"]=[0, 1];
-ph["p1"]=[0, 2, 3, 4];
-ph["p2"]=[5, 6, 7];
-ph["p3"]=[8, 9, 10, 11, 12];
-ph["p4"]=[13, 14];
-ph["p5"]=[15, 2, 16, 17, 12, 18, 10];
-ph["p6"]=[19, 20];
-ph["p7"]=[21, 22, 16, 23, 2, 24, 25, 26];
-ph["p8"]=[27, 28, 2, 24, 25, 26, 29, 12];
+ph["p0"]=[0, 1, 2, 3];
+ph["p1"]=[0, 4, 2, 3];
+ph["p2"]=[5, 6];
+ph["p3"]=[5, 7, 3, 8];
+ph["p4"]=[9, 10, 11];
+ph["p5"]=[12, 13, 14, 15, 16];
+ph["p6"]=[17, 6];
+ph["p7"]=[18, 19];
+ph["p8"]=[20, 7, 21, 22, 16, 23, 14];
+ph["p9"]=[24, 25];
+ph["p10"]=[4, 26, 7, 27, 28, 29, 30, 16];
      return {
          keywords: keywords,
          ph: ph

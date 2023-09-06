@@ -132,47 +132,117 @@
             <li class="- topic/li li">Metric query – Use this query to retrieve RMF Monitor III metrics.</li>
             <li class="- topic/li li">Report query – Use this query to retrieve RMF Monitor III reports.</li>
         </ul>
-        <section class="- topic/section section" id="query_lang__section_ass_fl3_ryb" data-ofbid="query_lang__section_ass_fl3_ryb"><h2 class="- topic/title title sectiontitle">Metric query syntax</h2><p class="- topic/p p">The syntax of the
-                Metric query is as
-                        follows:</p><p class="- topic/p p"><code class="+ topic/ph pr-d/codeph ph codeph"><var class="+ topic/keyword sw-d/varname keyword varname">resource_type</var>.<var class="+ topic/keyword sw-d/varname keyword varname">metric_description</var>
-                        {<var class="+ topic/keyword sw-d/varname keyword varname">qualifications</var>}</code></p><div class="- topic/p p">Where:<ul class="- topic/ul ul" id="query_lang__ul_exv_jl3_ryb" data-ofbid="query_lang__ul_exv_jl3_ryb">
+        <section class="- topic/section section" id="query_lang__section_ass_fl3_ryb" data-ofbid="query_lang__section_ass_fl3_ryb"><h2 class="- topic/title title sectiontitle">Metric query syntax</h2>
+            
+            <p class="- topic/p p">The syntax of the Metric query is as follows:</p>
+            <p class="- topic/p p"><code class="+ topic/ph pr-d/codeph ph codeph"><var class="+ topic/keyword sw-d/varname keyword varname">resource_type</var>.<var class="+ topic/keyword sw-d/varname keyword varname">metric_description</var>
+                        {<var class="+ topic/keyword sw-d/varname keyword varname">qualifications</var>}</code></p>
+            <div class="- topic/p p">Where:<ul class="- topic/ul ul" id="query_lang__ul_exv_jl3_ryb" data-ofbid="query_lang__ul_exv_jl3_ryb">
                     <li class="- topic/li li"><code class="+ topic/ph pr-d/codeph ph codeph"><var class="+ topic/keyword sw-d/varname keyword varname">resource_type</var></code> is the
-                        type of resource. You must enter the appropriate resource type value in the
-                            <var class="+ topic/keyword sw-d/varname keyword varname">resource_type</var> field.<p class="- topic/p p">You can find the available
-                            resource types in the <a class="- topic/xref xref" href="https://www.ibm.com/docs/en/zos/2.5.0?topic=models-zos-rmf-monitor-iii-resource-model#zosm3" target="_blank" rel="external noopener">z/OS RMF Monitor III resource
-                                model</a>, which is documented in the <cite class="- topic/cite cite">z/OS Resource Measurement Facility Programmer's
-            Guide</cite>. </p></li>
+                        type of resource for which information is requested. You must enter the
+                        appropriate value in the <code class="+ topic/ph pr-d/codeph ph codeph"><var class="+ topic/keyword sw-d/varname keyword varname">resource_type</var></code>
+                            field.<p class="- topic/p p">The available resource types are documented in the <a class="- topic/xref xref" href="https://www.ibm.com/docs/en/zos/2.5.0?topic=models-zos-rmf-monitor-iii-resource-model#zosm3" target="_blank" rel="external noopener">z/OS RMF Monitor III resource
+                                model</a> topic in the <cite class="- topic/cite cite">z/OS Resource Measurement Facility Programmer's
+            Guide</cite>.</p></li>
                     <li class="- topic/li li"><code class="+ topic/ph pr-d/codeph ph codeph"><var class="+ topic/keyword sw-d/varname keyword varname">metric_description</var></code> is the name of the
                         metric for the selected resource type.<p class="- topic/p p">After entering the resource type,
-                            you can choose the metric description from the pop-up window.</p></li>
-                    <li class="- topic/li li"><code class="+ topic/ph pr-d/codeph ph codeph"><var class="+ topic/keyword sw-d/varname keyword varname">qualification</var></code> is an optional parameter
+                            you can choose the metric description from the drop-down list.</p></li>
+                    <li class="- topic/li li"><code class="+ topic/ph pr-d/codeph ph codeph"><var class="+ topic/keyword sw-d/varname keyword varname">qualifications</var></code> is an optional parameter
                         and can contain any or all the following attributes separated by a comma:<ul class="- topic/ul ul" id="query_lang__ul_bqf_rl3_ryb" data-ofbid="query_lang__ul_bqf_rl3_ryb">
-                            <li class="- topic/li li"><code class="+ topic/ph pr-d/codeph ph codeph"><var class="+ topic/keyword sw-d/varname keyword varname">ulq</var></code> - The name of the resource
-                                type at upper level.</li>
-                            <li class="- topic/li li"><code class="+ topic/ph pr-d/codeph ph codeph"><var class="+ topic/keyword sw-d/varname keyword varname">name</var></code> - The name of the
+                            <li class="- topic/li li"><code class="+ topic/ph pr-d/codeph ph codeph"><var class="+ topic/keyword sw-d/varname keyword varname">ulq</var></code>: The name of the resource
+                                type at the upper level.</li>
+                            <li class="- topic/li li"><code class="+ topic/ph pr-d/codeph ph codeph"><var class="+ topic/keyword sw-d/varname keyword varname">name</var></code>: The name of the
                                 resource.</li>
+                            <li class="- topic/li li"><code class="+ topic/ph pr-d/codeph ph codeph"><var class="+ topic/keyword sw-d/varname keyword varname">filter</var></code>: The filter helps to
+                                focus on the data of your interest when requesting a list of values.
+                                    <div class="- topic/p p">You can use one of the following values for the
+                                            <code class="+ topic/ph pr-d/codeph ph codeph"><var class="+ topic/keyword sw-d/varname keyword varname">filter</var></code> attribute:<dl class="- topic/dl dl" id="query_lang__dl_qgp_sy5_ryb" data-ofbid="query_lang__dl_qgp_sy5_ryb">
+                                        
+                                            <dt class="- topic/dt dt dlterm">PAT=&lt; pattern&gt;</dt>
+                                            <dd class="- topic/dd dd">Specifies one or more patterns that must match the
+                                                name part of a list element.</dd>
+                                        
+                                        
+                                            <dt class="- topic/dt dt dlterm">LB=&lt;number&gt;</dt>
+                                            <dd class="- topic/dd dd">Specifies a lower bound value. Only list elements
+                                                with values higher than the given lower bound are
+                                                returned.</dd>
+                                        
+                                        
+                                            <dt class="- topic/dt dt dlterm">UB=&lt;number&gt;</dt>
+                                            <dd class="- topic/dd dd">Specifies an upper bound value. Only list elements
+                                                with values lower than the established upper bound
+                                                are returned.</dd>
+                                        
+                                        
+                                            <dt class="- topic/dt dt dlterm">HI=&lt;integer&gt;</dt>
+                                            <dd class="- topic/dd dd">Only the highest &lt;integer&gt; list elements are
+                                                returned (mutually exclusive with LO).</dd>
+                                        
+                                        
+                                            <dt class="- topic/dt dt dlterm">LO=&lt;integer&gt;</dt>
+                                            <dd class="- topic/dd dd">Only the lowest &lt;integer&gt; list elements are
+                                                returned (mutually exclusive with HI).</dd>
+                                        
+                                        
+                                            <dt class="- topic/dt dt dlterm">ORD=&lt; NA | ND | VA | VD | NN&gt;</dt>
+                                            <dd class="- topic/dd dd">
+                                                <ul class="- topic/ul ul" id="query_lang__ul_z5k_1z5_ryb" data-ofbid="query_lang__ul_z5k_1z5_ryb">
+                                                  <li class="- topic/li li">NA - Sort the list of names by their names in
+                                                  ascending order.</li>
+                                                  <li class="- topic/li li">ND – Sort the list of names by their names in
+                                                  descending order.</li>
+                                                  <li class="- topic/li li">VA – Sort the list of values by their values
+                                                  in ascending order.</li>
+                                                  <li class="- topic/li li">VD – Sort the list of values by their values
+                                                  in descending order. </li>
+                                                  <li class="- topic/li li">NN - If you do not want to have any order, you
+                                                  can specify ORD=NN.</li>
+                                                </ul>
+                                            </dd>
+                                        
+                                    </dl></div></li>
+                            <li class="- topic/li li"><code class="+ topic/ph pr-d/codeph ph codeph"><var class="+ topic/keyword sw-d/varname keyword varname">workscope</var></code>: To qualify a request
+                                for performance data in more detail about address spaces and WLM
+                                entities. You can use one of the following values for the workscope
+                                    attribute:<ul class="- topic/ul ul" id="query_lang__ul_px1_gz5_ryb" data-ofbid="query_lang__ul_px1_gz5_ryb">
+                                    <li class="- topic/li li">G - Global (no workscope required)</li>
+                                    <li class="- topic/li li">W - WLM workload</li>
+                                    <li class="- topic/li li">S - WLM service class</li>
+                                    <li class="- topic/li li">P - WLM service class period</li>
+                                    <li class="- topic/li li">R - WLM report class</li>
+                                    <li class="- topic/li li">J - Job</li>
+                                </ul></li>
                         </ul></li>
-                </ul></div><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">Examples</strong>:</p><span class="+ topic/ph pr-d/synph ph synph"><span class="+ topic/ph pr-d/var ph var">SYSPLEX</span>.<span class="+ topic/ph pr-d/var ph var">% total physical
-                    utilization (AAP) by
-                    partition</span></span><p class="- topic/p p"><var class="+ topic/keyword sw-d/varname keyword varname">MVS_IMAGE</var>.<var class="+ topic/keyword sw-d/varname keyword varname">% delay by WLM
-                    report class period</var>
-                {<var class="+ topic/keyword sw-d/varname keyword varname">name</var>=<var class="+ topic/keyword sw-d/varname keyword varname">rs21</var>}</p></section>
-        <section class="- topic/section section" id="query_lang__section_l5k_fm3_ryb" data-ofbid="query_lang__section_l5k_fm3_ryb"><h2 class="- topic/title title sectiontitle">Report query syntax</h2><p class="- topic/p p">The syntax of the
-                Report query is as
-                        follows:</p><p class="- topic/p p"><code class="+ topic/ph pr-d/codeph ph codeph"><var class="+ topic/keyword sw-d/varname keyword varname">resource_type</var>.<span class="+ topic/keyword pr-d/parmname keyword parmname">REPORT</span>.<var class="+ topic/keyword sw-d/varname keyword varname">report_name</var></code></p><div class="- topic/p p">Where:<ul class="- topic/ul ul" id="query_lang__ul_r3t_gm3_ryb" data-ofbid="query_lang__ul_r3t_gm3_ryb">
+                </ul></div>
+            <p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">Examples</strong>:</p>
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock" id="query_lang__codeblock_pfq_1bv_ryb" data-ofbid="query_lang__codeblock_pfq_1bv_ryb"><code><var class="+ topic/keyword sw-d/varname keyword varname">SYSPLEX</var>.<var class="+ topic/keyword sw-d/varname keyword varname">% total physical utilization (AAP) by partition</var></code></pre>
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock" id="query_lang__codeblock_f4k_cbv_ryb" data-ofbid="query_lang__codeblock_f4k_cbv_ryb"><code><var class="+ topic/keyword sw-d/varname keyword varname">MVS_IMAGE</var>.<var class="+ topic/keyword sw-d/varname keyword varname">% delay by WLM report class period</var> {<span class="+ topic/keyword pr-d/parmname keyword parmname">name</span>=<var class="+ topic/keyword sw-d/varname keyword varname">RS21</var>}</code></pre>
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock" id="query_lang__codeblock_isp_fbv_ryb" data-ofbid="query_lang__codeblock_isp_fbv_ryb"><code><var class="+ topic/keyword sw-d/varname keyword varname">MVS_IMAGE</var>.<var class="+ topic/keyword sw-d/varname keyword varname">% workflow by WLM report class period</var> {<span class="+ topic/keyword pr-d/parmname keyword parmname">ulq</span>=<var class="+ topic/keyword sw-d/varname keyword varname">RS21</var>,<span class="+ topic/keyword pr-d/parmname keyword parmname">name</span>=<var class="+ topic/keyword sw-d/varname keyword varname">RS2*</var>,<span class="+ topic/keyword pr-d/parmname keyword parmname">filter</span>=<var class="+ topic/keyword sw-d/varname keyword varname">PAT</var>=<var class="+ topic/keyword sw-d/varname keyword varname">RS*</var>,<span class="+ topic/keyword pr-d/parmname keyword parmname">workscope</span>=<var class="+ topic/keyword sw-d/varname keyword varname">,,G</var>}</code></pre>
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock" id="query_lang__codeblock_qqh_mbv_ryb" data-ofbid="query_lang__codeblock_qqh_mbv_ryb"><code><var class="+ topic/keyword sw-d/varname keyword varname">MVS_IMAGE</var>.<var class="+ topic/keyword sw-d/varname keyword varname">% workflow by WLM report class period</var> {<span class="+ topic/keyword pr-d/parmname keyword parmname">ulq</span>=<var class="+ topic/keyword sw-d/varname keyword varname">RS21</var>,<span class="+ topic/keyword pr-d/parmname keyword parmname">name</span>=<var class="+ topic/keyword sw-d/varname keyword varname">RS2*</var>,<span class="+ topic/keyword pr-d/parmname keyword parmname">filter</span>=<var class="+ topic/keyword sw-d/varname keyword varname">ORD</var>=<var class="+ topic/keyword sw-d/varname keyword varname">NA</var>,<span class="+ topic/keyword pr-d/parmname keyword parmname">workscope</span>=<var class="+ topic/keyword sw-d/varname keyword varname">,,G</var>}</code></pre>
+        </section>
+        <section class="- topic/section section" id="query_lang__section_l5k_fm3_ryb" data-ofbid="query_lang__section_l5k_fm3_ryb"><h2 class="- topic/title title sectiontitle">Report query syntax</h2>
+            
+            <p class="- topic/p p">The syntax of the Report query is as follows:</p>
+            <p class="- topic/p p"><code class="+ topic/ph pr-d/codeph ph codeph"><var class="+ topic/keyword sw-d/varname keyword varname">resource_type</var>.<span class="+ topic/keyword pr-d/parmname keyword parmname">REPORT</span>.<var class="+ topic/keyword sw-d/varname keyword varname">report_name</var></code></p>
+            <div class="- topic/p p">Where:<ul class="- topic/ul ul" id="query_lang__ul_r3t_gm3_ryb" data-ofbid="query_lang__ul_r3t_gm3_ryb">
                     <li class="- topic/li li"><code class="+ topic/ph pr-d/codeph ph codeph"><var class="+ topic/keyword sw-d/varname keyword varname">resource_type</var></code> is the
-                        type of resource. You must enter the appropriate resource type value in the
-                            <var class="+ topic/keyword sw-d/varname keyword varname">resource_type</var> field.<p class="- topic/p p">You can find the available
-                            resource types in the <a class="- topic/xref xref" href="https://www.ibm.com/docs/en/zos/2.5.0?topic=models-zos-rmf-monitor-iii-resource-model#zosm3" target="_blank" rel="external noopener">z/OS RMF Monitor III resource
-                                model</a>, which is documented in the <cite class="- topic/cite cite">z/OS Resource Measurement Facility Programmer's
-            Guide</cite>. </p></li>
+                        type of resource for which information is requested. You must enter the
+                        appropriate value in the <code class="+ topic/ph pr-d/codeph ph codeph"><var class="+ topic/keyword sw-d/varname keyword varname">resource_type</var></code>
+                            field.<p class="- topic/p p">The available resource types are documented in the <a class="- topic/xref xref" href="https://www.ibm.com/docs/en/zos/2.5.0?topic=models-zos-rmf-monitor-iii-resource-model#zosm3" target="_blank" rel="external noopener">z/OS RMF Monitor III resource
+                                model</a> topic in the <cite class="- topic/cite cite">z/OS Resource Measurement Facility Programmer's
+            Guide</cite>.</p></li>
                     <li class="- topic/li li"><code class="+ topic/ph pr-d/codeph ph codeph"><var class="+ topic/keyword sw-d/varname keyword varname">report_name</var></code> is the name of the report.
                         is the name of the metric for the selected resource type.<p class="- topic/p p">You can find the
                             report names in the <a class="- topic/xref xref" href="https://www.ibm.com/docs/en/zos/2.5.0?topic=rmf-zos-resource-measurement-facility-report-analysis" target="_blank" rel="external noopener">Interactive performance analysis with
                                 Monitor III</a>, which is documented in the <cite class="- topic/cite cite">z/OS Resource Measurement Facility Report Analysis</cite>.</p><div class="- topic/note note note note_note" id="query_lang__note_b4r_5m3_ryb" data-ofbid="query_lang__note_b4r_5m3_ryb"><span class="note__title">Note:</span> You can view reports on the Grafana dashboard only
                             for the resource types <code class="+ topic/ph pr-d/codeph ph codeph">SYSPLEX</code> and
                                 <code class="+ topic/ph pr-d/codeph ph codeph">MVS_IMAGE</code>.</div></li>
-                </ul></div><p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">Examples</strong>:</p><span class="+ topic/ph pr-d/synph ph synph">SYSPLEX.<span class="+ topic/keyword pr-d/parmname keyword parmname">REPORT</span>.CACHSUM</span><p class="- topic/p p"><span class="+ topic/ph pr-d/synph ph synph">SYSPLEX.<span class="+ topic/keyword pr-d/parmname keyword parmname">REPORT</span>.CPC</span></p></section>
+                </ul></div>
+            <p class="- topic/p p"><strong class="+ topic/ph hi-d/b ph b">Examples</strong>:</p>
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock" id="query_lang__codeblock_int_pbv_ryb" data-ofbid="query_lang__codeblock_int_pbv_ryb"><code><var class="+ topic/keyword sw-d/varname keyword varname">SYSPLEX</var>.<span class="+ topic/keyword pr-d/parmname keyword parmname">REPORT</span>.<var class="+ topic/keyword sw-d/varname keyword varname">CACHSUM</var></code></pre>
+            <pre class="+ topic/pre pr-d/codeblock pre codeblock" id="query_lang__codeblock_l5g_rbv_ryb" data-ofbid="query_lang__codeblock_l5g_rbv_ryb"><code><var class="+ topic/keyword sw-d/varname keyword varname">SYSPLEX</var>.<span class="+ topic/keyword pr-d/parmname keyword parmname">REPORT</span>.<var class="+ topic/keyword sw-d/varname keyword varname">CPC</var></code></pre>
+        </section>
     </div>
 </article></main></div>
                         

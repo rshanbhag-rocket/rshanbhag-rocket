@@ -19,4 +19,5 @@
    <appContext helpID="grafana_via_zosmf" path="grafana_via_zosmf.html"/>
    <appContext helpID="define_grafana_zosmf" path="define_grafana_zosmf.html"/>
    <appContext helpID="access_grafana_zosmf" path="access_grafana_zosmf.html"/>
+   <appContext helpID="historical_data" path="historical_data.html"/>
 </map>

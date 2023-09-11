@@ -16,6 +16,9 @@
                path="manage_dashboards.html#task_bns_mwp_ryb"/>
    <appContext helpID="apply_visualize" path="apply_visualize.html"/>
    <appContext helpID="apply_transformation" path="apply_transformation.html"/>
+   <appContext helpID="alerts" path="alerts.html"/>
+   <appContext helpID="creating_alert_rules" path="creating_alert_rules.html"/>
+   <appContext helpID="confi_contact_points" path="config_contact_points.html"/>
    <appContext helpID="grafana_via_zosmf" path="grafana_via_zosmf.html"/>
    <appContext helpID="define_grafana_zosmf" path="define_grafana_zosmf.html"/>
    <appContext helpID="access_grafana_zosmf" path="access_grafana_zosmf.html"/>

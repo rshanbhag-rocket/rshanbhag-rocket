@@ -1,20 +1,23 @@
-define(function() {var keywords=[{w:"Accessing",p:["p0"]},{w:"the",p:["p0","p6","p9"]},{w:"Grafana",p:["p0","p6","p7","p9","p12","p14"]},{w:"dashboard",p:["p0"]},{w:"Applying",p:["p1","p2"]},{w:"transformation",p:["p1"]},{w:"to",p:["p1","p2"]},{w:"data",p:["p1","p2","p4","p8"]},{w:"visualization",p:["p2","p14"]},{w:"Creating",p:["p3","p4"]},{w:"dashboards",p:["p3","p10"]},{w:"RMF",p:["p4","p12","p14"]},{w:"sources",p:["p4"]},{w:"Context",p:["p5"]},{w:"Sensitive",p:["p5"]},{w:"Help",p:["p5"]},{w:"Defining",p:["p6"]},{w:"server",p:["p6"]},{w:"through",p:["p7"]},{w:"IBM",p:["p7","p12"]},{w:"z/OS",p:["p7","p12"]},{w:"Management",p:["p7"]},{w:"Facility",p:["p7"]},{w:"Historical",p:["p8"]},{w:"collection",p:["p8"]},{w:"Installing",p:["p9"]},{w:"plugin",p:["p9","p12"]},{w:"on",p:["p9"]},{w:"Managing",p:["p10"]},{w:"Query",p:["p11"]},{w:"languages",p:["p11"]},{w:"for",p:["p12"]},{w:"App",p:["p12"]},{w:"Release",p:["p13"]},{w:"notes",p:["p13"]},{w:"of",p:["p14"]},{w:"Monitor",p:["p14"]},{w:"III",p:["p14"]},{w:"metrics",p:["p14"]},{w:"in",p:["p14"]}];
+define(function() {var keywords=[{w:"Accessing",p:["p0"]},{w:"the",p:["p0","p9","p12"]},{w:"Grafana",p:["p0","p9","p10","p12","p15","p17"]},{w:"dashboard",p:["p0"]},{w:"Introduction",p:["p1"]},{w:"to",p:["p1","p2","p3"]},{w:"Alerts",p:["p1"]},{w:"Applying",p:["p2","p3"]},{w:"transformation",p:["p2"]},{w:"data",p:["p2","p3","p6","p11"]},{w:"visualization",p:["p3","p17"]},{w:"Configuring",p:["p4"]},{w:"contact",p:["p4"]},{w:"points",p:["p4"]},{w:"Creating",p:["p5","p6","p7"]},{w:"dashboards",p:["p5","p13"]},{w:"RMF",p:["p6","p15","p17"]},{w:"sources",p:["p6"]},{w:"alert",p:["p7"]},{w:"rules",p:["p7"]},{w:"Context",p:["p8"]},{w:"Sensitive",p:["p8"]},{w:"Help",p:["p8"]},{w:"Defining",p:["p9"]},{w:"server",p:["p9"]},{w:"through",p:["p10"]},{w:"IBM",p:["p10","p15"]},{w:"z/OS",p:["p10","p15"]},{w:"Management",p:["p10"]},{w:"Facility",p:["p10"]},{w:"Historical",p:["p11"]},{w:"collection",p:["p11"]},{w:"Installing",p:["p12"]},{w:"plugin",p:["p12","p15"]},{w:"on",p:["p12"]},{w:"Managing",p:["p13"]},{w:"Query",p:["p14"]},{w:"languages",p:["p14"]},{w:"for",p:["p15"]},{w:"App",p:["p15"]},{w:"Release",p:["p16"]},{w:"notes",p:["p16"]},{w:"of",p:["p17"]},{w:"Monitor",p:["p17"]},{w:"III",p:["p17"]},{w:"metrics",p:["p17"]},{w:"in",p:["p17"]}];
 var ph={};
 ph["p0"]=[0, 1, 2, 3];
-ph["p1"]=[4, 5, 6, 7];
-ph["p2"]=[4, 8, 6, 7];
-ph["p3"]=[9, 10];
-ph["p4"]=[9, 11, 7, 12];
-ph["p5"]=[13, 14, 15];
-ph["p6"]=[16, 1, 2, 17];
-ph["p7"]=[2, 18, 19, 20, 21, 22];
-ph["p8"]=[23, 7, 24];
-ph["p9"]=[25, 1, 26, 27, 2];
-ph["p10"]=[28, 10];
-ph["p12"]=[19, 11, 31, 20, 2, 32, 26];
-ph["p11"]=[29, 30];
-ph["p14"]=[8, 35, 11, 36, 37, 38, 39, 2];
-ph["p13"]=[33, 34];
+ph["p1"]=[4, 5, 6];
+ph["p2"]=[7, 8, 5, 9];
+ph["p3"]=[7, 10, 5, 9];
+ph["p4"]=[11, 12, 13];
+ph["p5"]=[14, 15];
+ph["p6"]=[14, 16, 9, 17];
+ph["p7"]=[14, 18, 19];
+ph["p8"]=[20, 21, 22];
+ph["p9"]=[23, 1, 2, 24];
+ph["p10"]=[2, 25, 26, 27, 28, 29];
+ph["p12"]=[32, 1, 33, 34, 2];
+ph["p11"]=[30, 9, 31];
+ph["p14"]=[36, 37];
+ph["p13"]=[35, 15];
+ph["p16"]=[40, 41];
+ph["p15"]=[26, 16, 38, 27, 2, 39, 33];
+ph["p17"]=[10, 42, 16, 43, 44, 45, 46, 2];
      return {
          keywords: keywords,
          ph: ph

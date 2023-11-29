@@ -1,0 +1,86 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en-us"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2023"><meta name="copyright" content="(C) Copyright 2023"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="concept"><meta name="description" content="Variables are a powerful tool to create more interactive and dynamic dashboards. They offer a way to replace hard-coded values in metric queries and panel titles with placeholders for values."><meta name="DC.relation" scheme="URI" content="query_lang.html"><meta name="DC.relation" scheme="URI" content="alerts.html"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="variables"><meta name="DC.language" content="en-us"><title>RMF Variable Query syntax</title><link rel="stylesheet" type="text/css" href="commonltr.css"></head><body id="variables"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+    <h1 class="title topictitle1" id="ariaid-title1">RMF Variable Query syntax</h1>
+    
+    <div class="body conbody"><p class="shortdesc">Variables are a powerful tool to create more interactive and dynamic dashboards. They
+        offer a way to replace hard-coded values in metric queries and panel titles with
+        placeholders for values.</p>
+        <div class="p">Variables make it easy to change the data displayed in your dashboard simply by selecting
+            a value from the drop-down list at the top. Using variables in your dashboard simplifies
+            maintenance, particularly if you have multiple identical data sources. Instead of
+            creating separate dashboards for each data source, you can create one dashboard and use
+            variables to change what you are viewing.<div class="note important note_important" id="variables__note_ux2_qgc_fzb"><span class="note__title">Important:</span> It's important to note that variables don't have a default value. Each variable
+                drop-down list in Dashboard settings displays the variable list in the order it
+                appears.</div></div>
+        <p class="p">You can define a dashboard variable in <span class="ph menucascade"><span class="ph uicontrol">Dashboard Settings</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Variables</span></span> using Grafana's RMF Variable Query syntax with and without a filter.</p>
+        <section class="section" id="variables__section_ttx_pjc_fzb"><h2 class="title sectiontitle">Syntax of the query without a filter</h2><p class="p">The
+                general syntax of the query without a filter is as follows:</p><p class="p"><code class="ph codeph">SELECT
+                    &lt;COLUMN_NAME&gt; FROM RESOURCE WHERE <var class="keyword varname">condition1</var> or
+                        <var class="keyword varname">condition2</var> or
+                <var class="keyword varname">condition3</var></code></p><div class="note note note_note" id="variables__note_otd_vhc_fzb"><span class="note__title">Note:</span> The
+                    <code class="ph codeph">&lt;COLUMN_NAME&gt;</code> is limited to <q class="q">label</q> and
+                    <code class="ph codeph">RESOURCE</code> is limited to <q class="q">resource</q> only and cannot be used
+                for other purposes.</div><div class="p">Where:<ul class="ul" id="variables__ul_prm_ygc_fzb">
+                    <li class="li"><code class="ph codeph"><var class="keyword varname">condition1</var></code>:
+                                <span class="ph synph"><span class="keyword parmname">ULQ</span><span class="ph sep">=</span><span class="ph var">Value</span>
+                            <span class="ph sep">and</span>
+                            <span class="keyword parmname">TYPE</span><span class="ph sep">=</span><span class="ph var">Value</span></span></li>
+                    <li class="li"><code class="ph codeph"><var class="keyword varname">condition2</var></code>:
+                                <span class="ph synph"><span class="keyword parmname">Name</span><span class="ph sep">=</span><span class="ph var">Value</span>
+                            <span class="ph sep">and</span>
+                            <span class="keyword parmname">TYPE</span><span class="ph sep">=</span><span class="ph var">Value</span></span></li>
+                    <li class="li"><code class="ph codeph"><var class="keyword varname">condition3</var></code>:
+                                <span class="ph synph"><span class="keyword parmname">Name</span><span class="ph sep">=</span><span class="ph var">Value</span>
+                            <span class="ph sep">and</span>
+                            <span class="keyword parmname">ULQ</span><span class="ph sep">=</span><span class="ph var">Value</span>
+                            <span class="ph sep">and</span>
+                            <span class="keyword parmname">TYPE</span><span class="ph sep">=</span><span class="ph var">Value</span></span></li>
+                </ul></div><div class="p"><strong class="ph b">Examples for <var class="keyword varname">condition1</var>:</strong><ul class="ul" id="variables__ul_pfr_23c_fzb">
+                    <li class="li"><code class="ph codeph">select label from resource where
+                                    <span class="ph synph"><span class="keyword parmname">ulq</span><span class="ph sep">=</span><span class="ph var">"hostname of the
+                                    DDS"</span> and
+                                    <span class="keyword parmname">type</span><span class="ph sep">=</span><span class="ph var">"CHANNEL_PATH"</span></span></code></li>
+                    <li class="li"><code class="ph codeph">select label from resource where
+                                    <span class="ph synph"><span class="keyword parmname">ulq</span><span class="ph sep">=</span><span class="ph var">"hostname of the
+                                    DDS"</span> and
+                                    <span class="keyword parmname">type</span><span class="ph sep">=</span><span class="ph var">"ALL_CHANNELS"</span></span></code></li>
+                </ul></div><p class="p"><strong class="ph b">Examples for <var class="keyword varname">condition2</var>:</strong></p><code class="ph codeph">select
+                label from resource where
+                        <span class="ph synph"><span class="keyword parmname">name</span><span class="ph sep">=</span><span class="ph var">"resource_name"</span> and
+                        <span class="keyword parmname">type</span><span class="ph sep">=</span><span class="ph var">"SYSPLEX"</span></span></code><div class="p"><strong class="ph b">Examples
+                    for <var class="keyword varname">condition3</var>:</strong><ul class="ul" id="variables__ul_ow2_w3c_fzb">
+                    <li class="li"><code class="ph codeph">select label from resource where
+                                    <span class="ph synph"><span class="keyword parmname">ulq</span><span class="ph sep">=</span><span class="ph var">"hostname of the
+                                    DDS"</span> and
+                                    <span class="keyword parmname">name</span><span class="ph sep">=</span><span class="ph var">"*"</span> and
+                                    <span class="keyword parmname">type</span><span class="ph sep">=</span><span class="ph var">"CHANNEL_PATH"</span></span></code></li>
+                    <li class="li"><code class="ph codeph">select label from resource where
+                                    <span class="ph synph"><span class="keyword parmname">ulq</span><span class="ph sep">=</span><span class="ph var">"hostname of the
+                                    DDS"</span> and
+                                    <span class="keyword parmname">name</span><span class="ph sep">=</span><span class="ph var">"*"</span> and
+                                    <span class="keyword parmname">type</span><span class="ph sep">=</span><span class="ph var">"ALL_CHANNELS"</span></span></code></li>
+                </ul></div></section>
+        <section class="section" id="variables__section_wh3_dkc_fzb"><h2 class="title sectiontitle">Syntax of the query with a filter</h2>
+            
+            <p class="p">The general syntax of the RMF query with a filter is as follows:</p>
+            <p class="p"><code class="ph codeph">SELECT &lt;COLUMN_NAME&gt; FROM RESOURCE WHERE
+                    <var class="keyword varname">condition</var></code></p>
+            <p class="p">Where <code class="ph codeph"><var class="keyword varname">condition</var></code> is
+                        <span class="ph synph"><span class="keyword parmname">Name</span><span class="ph sep">=</span><span class="ph var">Value</span> and
+                        <span class="keyword parmname">ULQ</span><span class="ph sep">=</span><span class="ph var">Value</span> and
+                        <span class="keyword parmname">TYPE</span><span class="ph sep">=</span><span class="ph var">Value</span> and
+                        <span class="keyword parmname">Filter</span><span class="ph sep">=</span>
+                    <span class="ph var">Value</span></span></p>
+            <p class="p"><strong class="ph b">Examples for <var class="keyword varname">condition</var>:</strong></p>
+            <p class="p"><code class="ph codeph">select label from resource where
+                            <span class="ph synph"><span class="keyword parmname">name</span><span class="ph sep">=</span><span class="ph var">"resource_name"</span>
+                        and <span class="keyword parmname">type</span><span class="ph sep">=</span><span class="ph var">"SYSPLEX"</span> and
+                            <span class="keyword parmname">filter</span><span class="ph sep">=</span><span class="ph var">"MVS_IMAGE"</span></span></code></p>
+        </section>
+        <div class="example" id="variables__example_bck_5kc_fzb">
+            <p class="p">To learn how to effectively add and manage variables of your choice in Grafana, you
+                can refer to the <a class="xref" href="https://grafana.com/docs/grafana/latest/dashboards/variables/add-template-variables/" target="_blank" rel="external noopener">Grafana</a> documentation.</p>
+        </div>
+    </div>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="previouslink"><strong>Previous topic:</strong> <a class="link" href="query_lang.html" title="In Grafana, queries are essential for fetching and transforming data from RMF data sources.">IBM RMF query languages</a></div><div class="nextlink"><strong>Next topic:</strong> <a class="link" href="alerts.html" title="Grafana Alerting feature provides a reliable solution to detect and respond to system issues in real time.">Introduction to Alerts</a></div></div></nav></article></main></body></html>

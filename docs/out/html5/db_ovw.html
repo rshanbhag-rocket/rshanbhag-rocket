@@ -1,0 +1,124 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en-us"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2023"><meta name="copyright" content="(C) Copyright 2023"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="concept"><meta name="description" content="IBM RMF for z/OS Grafana is a plugin provides custom panels for the RMF data source and master dashboard that consists of RMF Charts, RMF Reporting, and RMF Time Series dashboards."><meta name="DC.relation" scheme="URI" content="create_datasources.html"><meta name="DC.relation" scheme="URI" content="apply_visualize.html"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="db_ovw"><meta name="DC.language" content="en-us"><title>RMF master dashboard</title><link rel="stylesheet" type="text/css" href="commonltr.css"></head><body id="db_ovw"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+    <h1 class="title topictitle1" id="ariaid-title1">RMF master dashboard</h1>
+    
+    <div class="body conbody"><p class="shortdesc">IBM® RMF for z/OS Grafana is a plugin provides custom panels for
+        the RMF data source and master dashboard that consists of RMF Charts, RMF Reporting, and RMF
+        Time Series dashboards.</p>
+        <p class="p">Grafana provides a highly flexible and customizable dashboard consisting of one or more
+            rows and panels. You can use various pre-configured panels to construct queries and
+            tailor the visualization to meet your requirements. This enables you to create a
+            personalized dashboard that seamlessly interacts with data from a configured <span class="ph">Distributed Data Server</span> (<span class="ph">DDS</span>). For more information about creating and managing dashboards, refer to the <a class="xref" href="https://grafana.com/docs/grafana/latest/dashboards/build-dashboards/create-dashboard/" target="_blank" rel="external noopener">Grafana</a> documentation.</p>
+        <div class="p">When you install the RMF for z/OS Grafana plugin for the first time, all the dashboards
+            are imported automatically. You can view the dashboards by navigating to <span class="ph menucascade"><span class="ph uicontrol">Apps</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">IBM RMF</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Dashboards</span></span>. The following table lists the dashboards available in RMF Charts, RMF
+            Reporting, and RMF Time Series dashboards:<table class="table frame-all" id="db_ovw__table_tkq_y3q_pyb"><caption><span class="table--title-label">Table 1. </span><span class="title">RMF master dashboard</span><span class="desc tabledesc">
+                    <p class="p summary"></p>
+                </span></caption><colgroup><col><col><col><col><col><col></colgroup><thead class="thead">
+                        <tr class="row">
+                            <th class="entry align-center colsep-1 rowsep-1" id="db_ovw__table_tkq_y3q_pyb__entry__1">RMF Charts Dashboard</th>
+                            <th class="entry align-center colsep-1 rowsep-1" id="db_ovw__table_tkq_y3q_pyb__entry__2" colspan="4">RMF Reporting
+                                Dashboards</th>
+                            <th class="entry align-center colsep-1 rowsep-1" id="db_ovw__table_tkq_y3q_pyb__entry__3">RMF Time Series Dashboards</th>
+                        </tr>
+                    </thead><tbody class="tbody">
+                        <tr class="row">
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__1">Common Storage Activity</td>
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__2">CACHDET</td>
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__2">DSND</td>
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__2">PROC</td>
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__2">SYSINFO</td>
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__3">Common Storage Activity (Timeline)</td>
+                        </tr>
+                        <tr class="row">
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__1">Coupling Facility Overview</td>
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__2">CACHSUM</td>
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__2">EADM</td>
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__2">PROCU</td>
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__2">SYSRG</td>
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__3">Coupling Facility Overview (Timeline)</td>
+                        </tr>
+                        <tr class="row">
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__1">Execution Velocity</td>
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__2">CFACT</td>
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__2">ENCLAVE</td>
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__2">SPACED</td>
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__2">SYSSUM</td>
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__3">Execution Velocity (Timeline)</td>
+                        </tr>
+                        <tr class="row">
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__1">General Activity</td>
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__2">CFOVER</td>
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__2">ENQ</td>
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__2">SPACEG</td>
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__2">USAGE</td>
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__3">General Activity (Timeline)</td>
+                        </tr>
+                        <tr class="row">
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__1">Overall Image Activity</td>
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__2">CFSYS</td>
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__2">HSM</td>
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__2">STOR</td>
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__2">XCFGROUP</td>
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__3">Overall Image Activity (Timeline)</td>
+                        </tr>
+                        <tr class="row">
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__1">Performance Index</td>
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__2">CHANNEL</td>
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__2">IOQ</td>
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__2">STORC</td>
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__2">XCFOVW</td>
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__3">Performance Index (Timeline)</td>
+                        </tr>
+                        <tr class="row">
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__1">Response Time</td>
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__2">CPC</td>
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__2">JES</td>
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__2">STORCR</td>
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__2">XCFPATH</td>
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__3">Response Time</td>
+                        </tr>
+                        <tr class="row">
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__1">Using &amp; Delays</td>
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__2">CRYOVW</td>
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__2">LOCKSP</td>
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__2">STORF</td>
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__2">XCFSYS</td>
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__3">Using &amp; Delays (Timeline)</td>
+                        </tr>
+                        <tr class="row">
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__1">XCF Activity</td>
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__2">DELAY</td>
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__2">LOCKSU</td>
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__2">STORM</td>
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__2">ZFSFS</td>
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__3">XCF Activity (Timeline)</td>
+                        </tr>
+                        <tr class="row">
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__1">Common Storage Activity</td>
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__2">DEV</td>
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__2">OPD</td>
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__2">STORR</td>
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__2">ZFSKN</td>
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__3">Common Storage Activity (Timeline)</td>
+                        </tr>
+                        <tr class="row">
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__1"></td>
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__2">DEVR</td>
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__2">PCIE</td>
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__2">STORS</td>
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__2">ZFSOVW</td>
+                            <td class="entry align-left colsep-1 rowsep-1" headers="db_ovw__table_tkq_y3q_pyb__entry__3"></td>
+                        </tr>
+                    </tbody></table></div>
+        <p class="p">The dashboard interface offers several customization options for data presentation. The
+            following is the image of the master dashboard from the <span class="ph">IBM RMF for z/OS Grafana</span> plugin:</p>
+        <p class="p"><img class="image" id="db_ovw__image_xc4_lvq_pyb" src="images/default_db_view.png" alt="default_dashboard_view"></p>
+        <p class="p">You can click the <img class="image" id="db_ovw__image_dst_g5q_pyb" src="images/import_db.png" height="23" width="111" alt="import_dashboard"> option when there is a new version of the plugin, and then re-import the
+            dashboard by clicking the <img class="image" id="db_ovw__image_x5y_35q_pyb" src="images/reimport.png" height="17" width="52" alt="reimport"> icon. Similarly, if any of the dashboards is no longer required, you can click
+            the <img class="image" id="db_ovw__image_hjg_l5q_pyb" src="images/del.png" height="17" width="14"> icon to remove it
+            from the master dashboard.</p>
+        <p class="p">For more information about available features in the Dashboard and their descriptions,
+            refer to the <a class="xref" href="https://grafana.com/docs/grafana/latest/dashboards/use-dashboards/" target="_blank" rel="external noopener">Grafana</a> documentation.</p>
+    </div>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="previouslink"><strong>Previous topic:</strong> <a class="link" href="create_datasources.html" title="To access RMF Monitor III metrics in Grafana, you need to connect to the Distributed Data Servers by adding an RMF data source.">Creating RMF data sources</a></div><div class="nextlink"><strong>Next topic:</strong> <a class="link" href="apply_visualize.html" title="By adding panels to dashboards, you can effectively present your RMF data in a visual format. Each panel must require at least one query to display a significant visualization.">Applying visualization to RMF data</a></div></div></nav></article></main></body></html>

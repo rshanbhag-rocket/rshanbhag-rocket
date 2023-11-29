@@ -1,0 +1,84 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en-us"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2023"><meta name="copyright" content="(C) Copyright 2023"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="task"><meta name="description" content="You must define the Grafana server as a target system in z/OSMF to access Grafana from the Resource Monitoring page of z/OSMF."><meta name="DC.relation" scheme="URI" content="grafana_via_zosmf.html"><meta name="DC.relation" scheme="URI" content="grafana_via_zosmf.html"><meta name="DC.relation" scheme="URI" content="access_grafana_zosmf.html"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="define_grafana_zosmf"><meta name="DC.language" content="en-us"><title>Defining the Grafana server</title><link rel="stylesheet" type="text/css" href="commonltr.css"></head><body id="define_grafana_zosmf"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+    <h1 class="title topictitle1" id="ariaid-title1">Defining the Grafana server</h1>
+    
+    <div class="body taskbody"><p class="shortdesc">You must define the Grafana server as a target system in <span class="ph">z/OSMF</span> to access Grafana from the <span class="keyword wintitle">Resource
+            Monitoring</span> page of <span class="ph">z/OSMF</span>.</p>
+        <section class="section prereq" id="define_grafana_zosmf__prereq_ovt_dyl_syb"><span class="ph">You must have completed the following tasks:</span><ul class="ul" id="define_grafana_zosmf__ul_ntr_2yl_syb">
+                <li class="li">Installed and configured <span class="ph">z/OSMF</span>. For more information, refer
+                        to <a class="xref" href="https://www.ibm.com/docs/en/zos/3.1.0?topic=facility-zos-management-configuration-guide" target="_blank" rel="external noopener"><cite class="cite">z/OS Management Facility Configuration Guide</cite>.</a></li>
+                <li class="li">Installed Grafana v9.5.1 or later. For more information,
+                        refer to <a class="xref" href="https://grafana.com/docs/grafana/latest/setup-grafana/installation/" target="_blank" rel="external noopener">Grafana</a> documentation.</li>
+                <li class="li">Installed the <span class="ph">IBM RMF for z/OS Grafana</span> plugin. See <a class="xref" href="install_grafana_plugin.html" title="You must install the IBM RMF for z/OS Grafana plugin to analyze and visualize RMF Monitor III metrics and reports.">Installing the RMF for z/OS plugin on Grafana</a>.</li>
+            </ul></section>
+        <section><ol class="ol steps"><li class="li step">
+                <span class="ph cmd"><span class="ph">Enter the URL of <span class="ph">z/OSMF</span> in a web browser.</span></span>
+            </li><li class="li step">
+                <span class="ph cmd"><span class="ph">Log in to <span class="ph">z/OSMF</span> if
+                    you are not already logged in.</span></span>
+            </li><li class="li step">
+                <span class="ph cmd">Double-click <span class="ph uicontrol">System Status</span>.</span>
+            </li><li class="li step">
+                <span class="ph cmd">Click <span class="ph uicontrol">Add Entry</span> from the <span class="ph uicontrol">Actions</span>
+                    drop-down list.</span>
+            </li><li class="li step">
+                <span class="ph cmd">Perform the following steps to add details about the Grafana server:</span>
+                <ol type="a" class="ol substeps" id="define_grafana_zosmf__substeps_yyv_pyl_syb">
+                    <li class="li substep substepexpand">
+                        <span class="ph cmd">Enter a name for the Grafana server in the <span class="ph uicontrol">Resource
+                                name</span> field.</span>
+                        <div class="itemgroup info">The <span class="ph uicontrol">Resource name</span> is the required field, and
+                            you must provide a unique name. The <span class="ph uicontrol">Resource name</span>
+                            can contain up to <samp class="ph systemoutput sysout">24</samp> characters including
+                            alphanumeric characters (<samp class="ph systemoutput sysout">A-Z</samp>,
+                                <samp class="ph systemoutput sysout">a-z</samp>, and
+                                <samp class="ph systemoutput sysout">0-9</samp>) and special characters
+                                (<samp class="ph systemoutput sysout">@ # $</samp>). <div class="note note note_note" id="define_grafana_zosmf__note_uw2_5yl_syb"><span class="note__title">Note:</span> You must note that the <span class="ph uicontrol">Resource name</span> is not
+                                case sensitive. Therefore, the entries with similar names but
+                                different capitalization, such as <samp class="ph systemoutput sysout">SYS1</samp>
+                                and <samp class="ph systemoutput sysout">Sys1</samp> are considered as identical by
+                                the system.</div></div>
+                    </li>
+                    <li class="li substep substepexpand">
+                        <span class="ph cmd">Enter the host name or IP address of the Grafana server that you want
+                            to access in the <span class="ph uicontrol">Host name or IP address</span>
+                            field.</span>
+                        <div class="itemgroup info">The host name or IP address can contain up to
+                                <samp class="ph systemoutput sysout">4000</samp> characters.</div>
+                    </li>
+                    <li class="li substep substepexpand">
+                        <span class="ph cmd">Select <span class="ph uicontrol">Grafana</span> from the <span class="ph uicontrol">Target system
+                                type</span> drop-down list.</span>
+                    </li>
+                    <li class="li substep substepexpand">
+                        <span class="ph cmd">Select the <span class="ph uicontrol">Use HTTPS</span> checkbox to enable secure
+                            communication.</span>
+                    </li>
+                    <li class="li substep substepexpand">
+                        <span class="ph cmd">Enter the port number where the Grafana server is hosted in the
+                                <span class="ph uicontrol">Port</span> field.</span>
+                        <div class="itemgroup info">
+                            <p class="p">The <span class="ph uicontrol">Port</span> is the required field, and the
+                                default port number is set to <samp class="ph systemoutput sysout">3000</samp>.</p>
+                            <div class="note tip note_tip" id="define_grafana_zosmf__note_pyn_k1m_syb"><span class="note__title">Tip:</span> Alternatively, you can use
+                                    <span class="ph uicontrol">up-down</span> controls to specify the port
+                                number.</div>
+                        </div>
+                    </li>
+                </ol>
+            </li><li class="li step">
+                <span class="ph cmd">Click <span class="ph uicontrol">OK</span>.</span>
+            </li></ol></section>
+        <section class="section result" id="define_grafana_zosmf__result_crs_p1m_syb">You have defined the Grafana server as the target system.
+            The connectivity status of the specified Grafana server is displayed as
+                <span class="ph uicontrol">Connected</span> on the <span class="keyword wintitle">System Status</span> page if
+            successful.</section>
+        <section class="section postreq" id="define_grafana_zosmf__postreq_yvm_r1m_syb"><span class="ph">You can perform the following tasks:</span><ul class="ul" id="define_grafana_zosmf__ul_l4d_s1m_syb">
+                <li class="li">Modify or Remove the Grafana server by clicking the
+                        <span class="ph uicontrol">Action</span> drop-down menu from the <span class="keyword wintitle">System
+                        Statuss</span> page.</li>
+                <li class="li">Access Grafana dashboards. See <a class="xref" href="access_grafana_zosmf.html" title="You can access the Grafana dashboard from the Resource Monitoring page of z/OSMF to investigate the RMF Monitor III metrics and reports.">Accessing the Grafana dashboard</a>.</li>
+            </ul></section>
+    </div>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="grafana_via_zosmf.html" title="When you use IBM z/OS Management Facility to monitor the performance of the z/OS sysplexes in your environment, you can also access Grafana dashboards from z/OSMF.">Grafana through IBM z/OS Management Facility</a></div><div class="previouslink"><strong>Previous topic:</strong> <a class="link" href="grafana_via_zosmf.html" title="When you use IBM z/OS Management Facility to monitor the performance of the z/OS sysplexes in your environment, you can also access Grafana dashboards from z/OSMF.">Grafana through IBM z/OS Management Facility</a></div><div class="nextlink"><strong>Next topic:</strong> <a class="link" href="access_grafana_zosmf.html" title="You can access the Grafana dashboard from the Resource Monitoring page of z/OSMF to investigate the RMF Monitor III metrics and reports.">Accessing the Grafana dashboard</a></div></div></nav></article></main></body></html>

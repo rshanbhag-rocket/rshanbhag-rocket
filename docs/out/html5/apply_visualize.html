@@ -1,0 +1,114 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en-us"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2023"><meta name="copyright" content="(C) Copyright 2023"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="task"><meta name="description" content="By adding panels to dashboards, you can effectively present your RMF data in a visual format. Each panel must require at least one query to display a significant visualization."><meta name="DC.relation" scheme="URI" content="db_ovw.html"><meta name="DC.relation" scheme="URI" content="query_lang.html"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="apply_visualize"><meta name="DC.language" content="en-us"><title>Applying visualization to RMF data</title><link rel="stylesheet" type="text/css" href="commonltr.css"></head><body id="apply_visualize"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+    <h1 class="title topictitle1" id="ariaid-title1">Applying visualization to RMF data</h1>
+    
+    <div class="body taskbody"><p class="shortdesc">By adding panels to dashboards, you can effectively present your RMF data in a visual
+        format. Each panel must require at least one query to display a significant
+        visualization.</p>
+        <section class="section prereq" id="apply_visualize__prereq_wbs_fw3_ryb"><span class="ph">You must have completed the following tasks:</span><ul class="ul" id="apply_visualize__ul_frm_gw3_ryb">
+                <li class="li">Installed the <span class="ph">IBM RMF for z/OS Grafana</span> plugin. See <a class="xref" href="install_grafana_plugin.html" title="You must install the IBM RMF for z/OS Grafana plugin to analyze and visualize RMF Monitor III metrics and reports.">Installing the RMF for z/OS plugin on Grafana</a>.</li>
+                <li class="li">Added a RMF data source in Grafana. See <a class="xref" href="create_datasources.html" title="To access RMF Monitor III metrics in Grafana, you need to connect to the Distributed Data Servers by adding an RMF data source.">Creating RMF data sources</a>.</li>
+                <li class="li">Understood query languages of the RMF. See <a class="xref" href="query_lang.html" title="In Grafana, queries are essential for fetching and transforming data from RMF data sources.">IBM RMF query languages</a>.</li>
+            </ul></section>
+        <section><ol class="ol steps"><li class="li step stepexpand">
+                <span class="ph cmd">Identify the dashboard for which you want to add visualization.</span>
+            </li><li class="li step stepexpand">
+                <span class="ph cmd">Perform one of the steps described in the following table:</span>
+                <div class="itemgroup info">
+                    <table class="simpletable frame-all" id="apply_visualize__simpletable_xd2_mfr_ryb"><colgroup><col style="width:66.66666666666666%"><col style="width:33.33333333333333%"></colgroup><thead><tr class="sthead">
+                            <th class="stentry" scope="col" id="apply_visualize__simpletable_xd2_mfr_ryb__stentry__1">Step description</th>
+                            <th class="stentry" scope="col" id="apply_visualize__simpletable_xd2_mfr_ryb__stentry__2">Step #</th>
+                        </tr></thead><tbody><tr class="strow">
+                            <td class="stentry" headers="apply_visualize__simpletable_xd2_mfr_ryb__stentry__1">If there are no panels added to the dashboard</td>
+                            <td class="stentry" headers="apply_visualize__simpletable_xd2_mfr_ryb__stentry__2">Perform step <a class="xref" href="#apply_visualize__step_vdz_4fr_ryb">3</a>.</td>
+                        </tr><tr class="strow">
+                            <td class="stentry" headers="apply_visualize__simpletable_xd2_mfr_ryb__stentry__1">If at least one panel is added to the dashboard</td>
+                            <td class="stentry" headers="apply_visualize__simpletable_xd2_mfr_ryb__stentry__2">Perform step <a class="xref" href="#apply_visualize__step_qrg_zfr_ryb">5</a>.</td>
+                        </tr></tbody></table>
+                </div>
+            </li><li class="li step stepexpand" id="apply_visualize__step_vdz_4fr_ryb">
+                <span class="ph cmd">Click <span class="ph uicontrol">+ Add visualization</span> to add visualization to your
+                    data.</span>
+                <div class="itemgroup info">
+                    <div class="note note note_note" id="apply_visualize__note_mgd_2jb_fzb"><span class="note__title">Note:</span> The navigation of the user interface can differ based on the
+                Grafana version that is currently installed.</div>
+                </div>
+                <div class="itemgroup stepresult">The <span class="keyword wintitle">Edit panel</span> is displayed.</div>
+            </li><li class="li step stepexpand">
+                <span class="ph cmd">Go to step <a class="xref" href="#apply_visualize__step_fvt_l3r_ryb">6</a>.</span>
+            </li><li class="li step stepexpand" id="apply_visualize__step_qrg_zfr_ryb">
+                <span class="ph cmd">Click <span class="ph menucascade"><span class="ph uicontrol">Add</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Visualization</span></span> from the dashboard header.</span>
+                <div class="itemgroup info">
+                    <p class="p"><img class="image" id="apply_visualize__image_cvx_xfr_ryb" src="images/add_visulize.png"></p>
+                </div>
+                <div class="itemgroup stepresult">The <span class="keyword wintitle">Edit panel</span> is displayed.</div>
+            </li><li class="li step stepexpand" id="apply_visualize__step_fvt_l3r_ryb">
+                <span class="ph cmd">Enter a name for the panel in the <span class="ph uicontrol">Title</span> field.</span>
+                <div class="itemgroup info">Optionally you can also provide a description for the panel that you are
+                        creating.<p class="p">When you add the description for the panel, a notification icon
+                            <img class="image" id="apply_visualize__image_ctj_ydp_ryb" src="images/notification_icon.png"> is
+                        displayed after the <span class="keyword wintitle">Panel</span> title, as shown in the
+                        following image:</p><p class="p"><img class="image" id="apply_visualize__image_q3p_12p_ryb" src="images/notification_display.png"></p></div>
+            </li><li class="li step stepexpand">
+                <span class="ph cmd">Select one of the visualization types from the drop-down menu:</span>
+                <div class="itemgroup info">
+                    <p class="p"><img class="image" id="apply_visualize__image_dxv_xmj_ryb" src="images/visualize_drop-down.png"></p>
+                    <p class="p">You can choose <span class="ph uicontrol">Report for IBM RMF for z/OS</span> or built-in
+                            <span class="ph uicontrol">Bar chart</span> Grafana visualization types from the
+                        drop-down list.</p>
+                </div>
+            </li><li class="li step stepexpand">
+                <span class="ph cmd">Click the <span class="ph uicontrol">Query</span> tab, and then enter a query in the query
+                    language of the RMF data source.</span>
+                <div class="itemgroup info">
+                    <div class="note note note_note" id="apply_visualize__note_osz_px3_ryb"><span class="note__title">Note:</span> You can click <span class="ph uicontrol">+ Query</span> to add
+                        multiple queries.</div>
+                </div>
+            </li><li class="li step stepexpand">
+                <span class="ph cmd">Click the <span class="ph uicontrol">Transformation</span> tab, and then select a
+                    transformation from the list.</span>
+                <div class="itemgroup info">Upon accessing the transformation options, a dedicated row is presented for
+                        configuration.<div class="note note note_note" id="apply_visualize__note_d55_hfp_ryb"><span class="note__title">Note:</span> You can click <span class="ph uicontrol">+ Add
+                            Transformation</span> to add multiple transformations to
+                        data.</div></div>
+            </li><li class="li step stepexpand">
+                <span class="ph cmd">Select the existing data sources from the <span class="ph uicontrol">Data source</span>
+                    drop-down list.</span>
+            </li><li class="li step stepexpand">
+                <span class="ph cmd">Click the <span class="ph uicontrol">Time Picker</span> drop-down list to select relative
+                    time range options and set custom absolute time ranges.</span>
+                <div class="itemgroup info">
+                    <p class="p"><img class="image" id="apply_visualize__image_enk_ygr_ryb" src="images/time_picker.png"></p>
+                </div>
+            </li><li class="li step stepexpand">
+                <span class="ph cmd">Click the <span class="ph uicontrol">Refresh dashboard</span>
+                    <img class="image" id="apply_visualize__image_vt1_by3_ryb" src="images/refresh.png"> icon to query the RMF
+                    data source.</span>
+                <div class="itemgroup stepresult">Grafana provides you with a preview of your query results along with the
+                    corresponding visualization.</div>
+            </li><li class="li step stepexpand"><strong>Optional: </strong>
+                <span class="ph cmd">Click <span class="ph uicontrol">Apply</span> to view your changes applied to the
+                    dashboard.</span>
+            </li><li class="li step stepexpand">
+                <span class="ph cmd">Click <span class="ph uicontrol">Save</span>, and then enter a note describing the changes
+                    you have made.</span>
+            </li><li class="li step stepexpand">
+                <span class="ph cmd">Click <span class="ph uicontrol">Save</span> to store the changes made to the
+                    dashboard.</span>
+            </li></ol></section>
+        <section class="section result" id="apply_visualize__result_c44_w3s_lzb">You have applied visualization to the RMF data.</section>
+        <section class="section postreq" id="apply_visualize__postreq_amh_qy3_ryb">
+            <p class="p">Grafana provides a range of visualizations that cater to different use cases. For
+                more information about the built-in panels, options, and typical usage, refer to the
+                    <a class="xref" href="https://grafana.com/docs/grafana/latest/panels-visualizations/visualizations/" target="_blank" rel="external noopener">Grafana</a> documentation.</p>
+            <p class="p">You can also configure the panel options based on your requirements. For more
+                information refer to the <a class="xref" href="https://grafana.com/docs/grafana/latest/panels-visualizations/configure-panel-options/#edit-a-panel" target="_blank" rel="external noopener">Grafana</a> documentation.</p>
+            <p class="p">You can add multiple transformation to your data. When there are multiple
+                transformations, Grafana applies them sequentially. Each transformation produces a
+                result set that is passed on to the next transformation in the pipeline. Grafana
+                provides several ways that you can transform data. For entire list of
+                transformations, refer to the <a class="xref" href="https://grafana.com/docs/grafana/latest/panels-visualizations/query-transform-data/transform-data/#transformation-functions" target="_blank" rel="external noopener">Grafana</a> documentation.</p>
+        </section>
+    </div>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="previouslink"><strong>Previous topic:</strong> <a class="link" href="db_ovw.html" title="IBM RMF for z/OS Grafana is a plugin provides custom panels for the RMF data source and master dashboard that consists of RMF Charts, RMF Reporting, and RMF Time Series dashboards.">RMF master dashboard</a></div><div class="nextlink"><strong>Next topic:</strong> <a class="link" href="query_lang.html" title="In Grafana, queries are essential for fetching and transforming data from RMF data sources.">IBM RMF query languages</a></div></div></nav></article></main></body></html>

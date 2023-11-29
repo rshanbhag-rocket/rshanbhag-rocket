@@ -1,0 +1,57 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en-us"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2023"><meta name="copyright" content="(C) Copyright 2023"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="concept"><meta name="description" content="Whenever you encounter issues while using the IBM RMF for z/OS Grafana plugin, you can view detailed error messages that contain sufficient information to help you identify and troubleshoot the problem."><meta name="DC.relation" scheme="URI" content="historical_data.html"><meta name="DC.relation" scheme="URI" content="grafana_via_zosmf.html"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="error_reports"><meta name="DC.language" content="en-us"><title>Error reporting in the plugin</title><link rel="stylesheet" type="text/css" href="commonltr.css"></head><body id="error_reports"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+    <h1 class="title topictitle1" id="ariaid-title1">Error reporting in the plugin</h1>
+    
+    
+    <div class="body conbody"><p class="shortdesc">Whenever you encounter issues while using the <span class="ph">IBM RMF for z/OS Grafana</span> plugin, you can view detailed error messages
+        that contain sufficient information to help you identify and troubleshoot the
+        problem.</p>
+        <p class="p">By viewing these error messages, you can quickly and efficiently troubleshoot any issues
+            you may encounter while using the <span class="ph">IBM RMF for z/OS Grafana</span>
+            plugin.</p>
+        <div class="p">The errors that can occur vary in severity and are classified into different types as
+            described in the following table:<table class="simpletable frame-all" id="error_reports__simpletable_yqt_q33_dzb"><colgroup><col style="width:14.285714285714288%"><col style="width:14.285714285714288%"><col style="width:71.42857142857143%"></colgroup><thead><tr class="sthead">
+                    <th class="stentry" scope="col" id="error_reports__simpletable_yqt_q33_dzb__stentry__1">Type</th>
+                    <th class="stentry" scope="col" id="error_reports__simpletable_yqt_q33_dzb__stentry__2">Error Code</th>
+                    <th class="stentry" scope="col" id="error_reports__simpletable_yqt_q33_dzb__stentry__3">Description</th>
+                </tr></thead><tbody><tr class="strow">
+                    <td class="stentry" headers="error_reports__simpletable_yqt_q33_dzb__stentry__1">Severe</td>
+                    <td class="stentry" headers="error_reports__simpletable_yqt_q33_dzb__stentry__2">S</td>
+                    <td class="stentry" headers="error_reports__simpletable_yqt_q33_dzb__stentry__3">A critical error has arisen that will cause the task you are currently
+                        performing to terminate immediately.<p class="p">It is essential to take necessary
+                            measures to prevent such errors to ensure the smooth functioning of the
+                                <span class="ph">IBM RMF for z/OS Grafana</span> plugin.</p></td>
+                </tr><tr class="strow">
+                    <td class="stentry" headers="error_reports__simpletable_yqt_q33_dzb__stentry__1">Eventual Action </td>
+                    <td class="stentry" headers="error_reports__simpletable_yqt_q33_dzb__stentry__2">E</td>
+                    <td class="stentry" headers="error_reports__simpletable_yqt_q33_dzb__stentry__3">An error of a transient nature has arisen but can be resolved with an
+                        action by the user.</td>
+                </tr><tr class="strow">
+                    <td class="stentry" headers="error_reports__simpletable_yqt_q33_dzb__stentry__1">Warning</td>
+                    <td class="stentry" headers="error_reports__simpletable_yqt_q33_dzb__stentry__2">W</td>
+                    <td class="stentry" headers="error_reports__simpletable_yqt_q33_dzb__stentry__3">Receiving a warning message from the <span class="ph">IBM RMF for z/OS Grafana</span> plugin is not indicative of an
+                        error within the application.</td>
+                </tr><tr class="strow">
+                    <td class="stentry" headers="error_reports__simpletable_yqt_q33_dzb__stentry__1">Information</td>
+                    <td class="stentry" headers="error_reports__simpletable_yqt_q33_dzb__stentry__2">I</td>
+                    <td class="stentry" headers="error_reports__simpletable_yqt_q33_dzb__stentry__3">An information message informs the users about changes or updates in
+                        the <span class="ph">IBM RMF for z/OS Grafana</span> plugin.<p class="p">You need not
+                            take any action in response, but it's essential to stay up-to-date and
+                            be aware of these updates.</p></td>
+                </tr></tbody></table></div>
+        <p class="p">When an error occurs, it is assigned a unique Error ID that can help quickly identify the
+            root cause of the issue by referring to the log file. The Error ID is a combination of
+            10 characters comprising lower and upper case alphabets.</p>
+        <p class="p">In case of any problems with the <span class="ph">Distributed Data Server</span> (<span class="ph">DDS</span>), you can identify the issues by looking
+            into <span class="ph">DDS</span>-specific errors, which will be
+            displayed without any modifications. The messages issued by the <span class="ph">Distributed Data Server</span> are documented in the <a class="xref" href="https://www.ibm.com/docs/en/zos/3.1.0?topic=codes-distributed-data-server-messages-gpm" target="_blank" rel="external noopener">Distributed Data Server messages - GPM</a> topic
+            in the <cite class="cite">z/OS Resource Measurement Facility Messages and Codes</cite>.</p>
+        <p class="p">The following are the examples of error messages that you may encounter while using the
+                <span class="ph">IBM RMF for z/OS Grafana</span> plugin:</p>
+        <p class="p"><img class="image" id="error_reports__image_acr_ck3_dzb" src="images/error_dds.png" alt="DDS_error"></p>
+        <p class="p"><img class="image" id="error_reports__image_m44_dk3_dzb" src="images/error_plugin.png" height="110" width="378" alt="Error_plugin"></p>
+        <div class="note tip note_tip" id="error_reports__note_p2m_fqt_lzb"><span class="note__title">Tip:</span> To diagnose the issue from the docker logs of the <span class="ph">IBM RMF for z/OS Grafana</span> plugin, you can run the following command:
+            <pre class="pre codeblock" id="error_reports__codeblock_g5n_hqt_lzb"><code>docker logs &lt;<var class="keyword varname">container_name</var>&gt; 2&gt;&amp;1 | grep "&lt;<var class="keyword varname">unique error code shown in the error message</var>&gt;"</code></pre></div>
+    </div>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="previouslink"><strong>Previous topic:</strong> <a class="link" href="historical_data.html" title="In Grafana, you can collect historical data using absolute and relative time ranges.">Historical data collection</a></div><div class="nextlink"><strong>Next topic:</strong> <a class="link" href="grafana_via_zosmf.html" title="When you use IBM z/OS Management Facility to monitor the performance of the z/OS sysplexes in your environment, you can also access Grafana dashboards from z/OSMF.">Grafana through IBM z/OS Management Facility</a></div></div></nav></article></main></body></html>

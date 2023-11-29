@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<project basedir="C:\Users\rshanbhag\Oxygen XML Author 24\frameworks\dita\DITA-OT3.x\plugins\com.oxygenxml.webhelp.responsive\templates\oxygen-gray" name="Copy template resources" default="copy-template-resources">
+    <target name="copy-template-resources">
+        <mkdir dir="C:\Git\zos_dev\RMF\V3R1\rmf\grafana\out\webhelp-responsive\oxygen-webhelp\template"/>
+        <copy todir="C:\Git\zos_dev\RMF\V3R1\rmf\grafana\out\webhelp-responsive\oxygen-webhelp\template" overwrite="yes" failonerror="yes" verbose="yes">
+            <fileset dir=".">
+                <include name="oxygen-gray.css"/>
+            </fileset>
+            <fileset dir=".">
+                <include name="notes.css"/>
+            </fileset>
+            <fileset dir=".">
+                <include name="resources/**/*"/>
+                <exclude name="resources/**/*.svn"/>
+                <exclude name="resources/**/*.git"/>
+            </fileset>
+        </copy>
+    </target>
+</project>

@@ -1,0 +1,34 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en-us"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2023"><meta name="copyright" content="(C) Copyright 2023"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="task"><meta name="description" content="You can access the Grafana dashboard from the Resource Monitoring page of z/OSMF to investigate the RMF Monitor III metrics and reports."><meta name="DC.relation" scheme="URI" content="grafana_via_zosmf.html"><meta name="DC.relation" scheme="URI" content="define_grafana_zosmf.html"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="access_grafana_zosmf"><meta name="DC.language" content="en-us"><title>Accessing the Grafana dashboard</title><link rel="stylesheet" type="text/css" href="commonltr.css"></head><body id="access_grafana_zosmf"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+    <h1 class="title topictitle1" id="ariaid-title1">Accessing the Grafana dashboard</h1>
+    
+    <div class="body taskbody"><p class="shortdesc">You can access the Grafana dashboard from the <span class="keyword wintitle">Resource
+            Monitoring</span> page of <span class="ph">z/OSMF</span> to
+        investigate the RMF Monitor III metrics and reports.</p>
+        <section class="section prereq" id="access_grafana_zosmf__prereq_apk_dbm_syb">You must have completed the following tasks:<ul class="ul" id="access_grafana_zosmf__ul_txr_j4b_nzb">
+                <li class="li">Defined the Grafana server in <span class="ph">z/OSMF</span>. See
+                        <a class="xref" href="define_grafana_zosmf.html" title="You must define the Grafana server as a target system in z/OSMF to access Grafana from the Resource Monitoring page of z/OSMF.">Defining the Grafana server</a>.</li>
+                <li class="li">Created a user in the Grafana Server with an appropriate role using the TSO user
+                    ID. For more information, refer to the <a class="xref" href="https://grafana.com/docs/grafana/latest/administration/user-management/" target="_blank" rel="external noopener">Grafana</a> documentation.</li>
+            </ul></section>
+        <section><ol class="ol steps"><li class="li step">
+                <span class="ph cmd"><span class="ph">Enter the URL of <span class="ph">z/OSMF</span> in a web browser.</span></span>
+            </li><li class="li step">
+                <span class="ph cmd"><span class="ph">Log in to <span class="ph">z/OSMF</span> if
+                    you are not already logged in.</span></span>
+            </li><li class="li step">
+                <span class="ph cmd">Double-click <span class="ph uicontrol">Resource Monitoring</span>.</span>
+            </li><li class="li step">
+                <span class="ph cmd">Select the Grafana server that you want to access from the drop-down
+                    list.</span>
+            </li><li class="li step">
+                <span class="ph cmd">Click <span class="ph uicontrol">Load Grafana</span>.</span>
+            </li></ol></section>
+        <section class="section result" id="access_grafana_zosmf__result_d3m_qcm_syb">You have accessed Grafana from <span class="ph">z/OSMF</span>.</section>
+        <section class="section postreq" id="access_grafana_zosmf__postreq_dzr_rcm_syb"><span class="ph">You can perform the following tasks:</span><ul class="ul" id="access_grafana_zosmf__ul_uhg_tcm_syb">
+                <li class="li">Sign in to the Grafana server if you are not already signed in.</li>
+                <li class="li">Add a RMF data source to fetch data from <span class="ph">Distributed Data Server</span>s (<span class="ph">DDS</span>). See <a class="xref" href="Creating RMF data sourcesabout:blankcreate_datasources.dita" target="_blank" rel="external noopener">Creating RMF data sources</a>.</li>
+            </ul></section>
+    </div>
+<nav role="navigation" class="related-links"><div class="familylinks"><div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="grafana_via_zosmf.html" title="When you use IBM z/OS Management Facility to monitor the performance of the z/OS sysplexes in your environment, you can also access Grafana dashboards from z/OSMF.">Grafana through IBM z/OS Management Facility</a></div><div class="previouslink"><strong>Previous topic:</strong> <a class="link" href="define_grafana_zosmf.html" title="You must define the Grafana server as a target system in z/OSMF to access Grafana from the Resource Monitoring page of z/OSMF.">Defining the Grafana server</a></div></div></nav></article></main></body></html>

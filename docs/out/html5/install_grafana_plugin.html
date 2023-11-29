@@ -1,0 +1,117 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en-us"><head><meta charset="UTF-8"><meta name="DC.rights.owner" content="(C) Copyright 2023"><meta name="copyright" content="(C) Copyright 2023"><meta name="generator" content="DITA-OT"><meta name="DC.type" content="task"><meta name="description" content="You must install the IBM RMF for z/OS Grafana plugin to analyze and visualize RMF Monitor III metrics and reports."><meta name="DC.relation" scheme="URI" content="rn.html"><meta name="DC.relation" scheme="URI" content="create_datasources.html"><meta name="DC.relation" scheme="URI" content="https://grafana.com/docs/grafana/latest/cli/"><meta name="DC.relation" scheme="URI" content="https://docs.docker.com/engine/reference/commandline/run/"><meta name="DC.relation" scheme="URI" content="https://docs.docker.com/engine/reference/commandline/volume_create/"><meta name="DC.format" content="HTML5"><meta name="DC.identifier" content="install_grafana_plugin"><meta name="DC.language" content="en-us"><title>Installing the RMF for z/OS plugin on Grafana</title><link rel="stylesheet" type="text/css" href="commonltr.css"></head><body id="install_grafana_plugin"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+    <h1 class="title topictitle1" id="ariaid-title1">Installing the RMF for z/OS plugin on Grafana</h1>
+    
+    
+    <div class="body taskbody"><p class="shortdesc">You must install the IBM® RMF for z/OS Grafana plugin to analyze
+        and visualize RMF Monitor III metrics and reports.</p>
+        <section class="section prereq" id="install_grafana_plugin__prereq_oxf_ywq_pyb">
+            <div class="p">You must have completed the following tasks:<ul class="ul" id="install_grafana_plugin__ul_hyp_ywq_pyb">
+                    <li class="li">Installed <span class="ph">RMF for z/OS</span>
+                        <span class="ph">3.1</span>
+                        <span class="ph">DDS</span>.</li>
+                    <li class="li">Installed Grafana 9.5.1 or later.</li>
+                </ul>You must be familiar working with Grafana.</div>
+        </section>
+        <section><ol class="ol steps"><li class="li step stepexpand">
+                <span class="ph cmd">To enable the RMF unsigned plugin to be loaded in Grafana you must perform one
+                    of the following sub-steps:</span>
+                <ol type="a" class="ol substeps" id="install_grafana_plugin__substeps_rqs_txj_lzb">
+                    <li class="li substep">
+                        <span class="ph cmd">Set the environment variable
+                                <samp class="ph systemoutput sysout">GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS</samp>
+                            to <var class="keyword varname">ibm-rmf,ibm-rmf-datasource,ibm-rmf-report</var>.</span>
+                    </li>
+                    <li class="li substep">
+                        <span class="ph cmd">Set the value of <span class="ph uicontrol">allow_loading_unsigned_plugins</span>
+                            to <var class="keyword varname">ibm-rmf,ibm-rmf-datasource,ibm-rmf-report</var> in the
+                                <span class="keyword wintitle">[plugins]</span> section of the
+                                <span class="ph filepath">defaults.ini</span> file.</span>
+                    </li>
+                </ol>
+            </li></ol><div class="li stepsection">Installing the RMF for z/OS plugin in the Grafana stand-alone
+                application:</div><ol class="ol steps" start="2"><li class="li step stepexpand">
+                <span class="ph cmd">Run the following command to install the plugin by using Grafana CLI:</span>
+                <div class="itemgroup info">
+                    <pre class="pre codeblock" id="install_grafana_plugin__codeblock_frs_byj_lzb"><code>grafana cli --pluginUrl <var class="keyword varname">https://github.com/IBM/RMF/releases/download/ibm-rmf-grafana/v&lt;version&gt;/ibm-rmf-grafana-&lt;version&gt;.zip</var> plugins install <var class="keyword varname">ibm-rmf</var></code></pre>
+                    <div class="note remember note_remember" id="install_grafana_plugin__note_lbw_czj_lzb"><span class="note__title">Remember:</span> You must replace the value of
+                            &lt;<var class="keyword varname">version</var>&gt; for the <span class="keyword parmname">pluginURL</span>
+                        option to version number of the plugin to be installed.</div>
+                </div>
+            </li><li class="li step stepexpand">
+                <span class="ph cmd">Restart Grafana.</span>
+            </li></ol><div class="li stepsection">Installing the RMF for z/OS plugin along with Grafana within the Docker
+                environment:</div><ol class="ol steps" start="4"><li class="li step stepexpand">
+                <span class="ph cmd">Run the following command to create a volume for storing the Grafana
+                    state:</span>
+                <div class="itemgroup info">
+                    <pre class="pre codeblock" id="install_grafana_plugin__codeblock_w1x_pyj_lzb"><code>docker volume create <var class="keyword varname">rmf-grafana-data</var></code></pre>
+                </div>
+            </li><li class="li step stepexpand">
+                <span class="ph cmd">Run the following command to create and run a container:</span>
+                <div class="itemgroup info">
+                    <pre class="pre codeblock" id="install_grafana_plugin__codeblock_v2k_5yj_lzb"><code>docker run --name <var class="keyword varname">rmf-grafana</var> --hostname <var class="keyword varname">rmf-grafana</var> --detach --restart unless-stopped --volume <var class="keyword varname">rmf-grafana-data</var>:<var class="keyword varname">/var/lib/grafana</var> --publish <var class="keyword varname">3000</var>:<var class="keyword varname">3000</var> --env “<var class="keyword varname">GF_INSTALL_PLUGINS=https://github.com/IBM/RMF/releases/download/ibm-rmf-grafana/v&lt;version&gt;/ibm-rmf-grafana-&lt;version&gt;.zip</var>;<var class="keyword varname">ibm-rmf</var>” --env “<var class="keyword varname">GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS</var>=<var class="keyword varname">ibm-rmf,ibm-rmf-datasource,ibm-rmf-report</var>” &lt;<var class="keyword varname">image</var>&gt;</code></pre>
+                    <div class="note remember note_remember" id="install_grafana_plugin__note_d1p_h1k_lzb"><span class="note__title">Remember:</span> You must replace the values of the
+                        following options in the command:<ul class="ul" id="install_grafana_plugin__ul_qrd_gbk_lzb">
+                            <li class="li">&lt;<var class="keyword varname">version</var>&gt; for the <span class="keyword parmname">env</span>
+                                option to the version number of the plugin to be installed.</li>
+                            <li class="li">&lt;<var class="keyword varname">image</var>&gt; to the version of the Grafana image to
+                                be used.</li>
+                        </ul></div>
+                    <div class="note note note_note" id="install_grafana_plugin__note_z2c_lkm_lzb"><span class="note__title">Note:</span> zCX/zLinux images are available at <a class="xref" href="https://ibm.github.io/ibm-z-oss-hub/main/main.html" target="_blank" rel="external noopener">Container Images for IBM Z and LinuxONE</a>.
+                        Similarly, images of other required platforms are available at <a class="xref" href="https://hub.docker.com/" target="_blank" rel="external noopener">Docker
+                            Hub</a>.</div>
+                </div>
+            </li></ol><div class="li stepsection">Enabling the RMF for z/OS plugin on Grafan UI:</div><ol class="ol steps" start="6"><li class="li step stepexpand">
+                <span class="ph cmd">Enter the URL of Grafana in your web browser.</span>
+            </li><li class="li step stepexpand">
+                <span class="ph cmd">Enter the username and password of Grafana on the <span class="keyword wintitle">sign-in</span>
+                    page.</span>
+            </li><li class="li step stepexpand">
+                <span class="ph cmd">Go to <span class="ph menucascade"><span class="ph uicontrol">Administration</span><abbr title="and then"> &gt; </abbr><span class="ph uicontrol">Plugins</span></span>.</span>
+                <div class="itemgroup info">
+                    <div class="note note note_note" id="install_grafana_plugin__note_slz_dgb_fzb"><span class="note__title">Note:</span> The navigation of the user interface can differ based on the
+                Grafana version that is currently installed.</div>
+                </div>
+            </li><li class="li step stepexpand">
+                <span class="ph cmd">Enter <span class="keyword">RMF</span> in the <span class="ph uicontrol">Search</span> bar on the
+                        <span class="keyword wintitle">Plugins</span> page.</span>
+            </li><li class="li step stepexpand">
+                <span class="ph cmd">Click <span class="ph uicontrol">IBM RMF</span> in the
+                    search results.</span>
+            </li><li class="li step stepexpand">
+                <span class="ph cmd">Click <span class="ph uicontrol">Enable</span>.</span>
+                <div class="itemgroup info">
+                    <div class="note note note_note" id="install_grafana_plugin__note_okf_tg5_lzb"><span class="note__title">Note:</span> After you install the <span class="ph">IBM RMF for z/OS Grafana</span> plugin, when you open IBM RMF
+                        on the <span class="keyword wintitle">Plugins</span> page of Grafana UI, an <samp class="ph msgph">Invalid
+                            plugin signature</samp> warning message is displayed.</div>
+                </div>
+            </li></ol><div class="li stepsection"><strong class="ph b">Optional</strong>: The <span class="ph">IBM RMF for z/OS Grafana</span> plugin
+                is signed with the GPG key. You can verify the signature by performing the following
+                steps:</div><ol class="ol steps" start="12"><li class="li step stepexpand">
+                <span class="ph cmd">Download the <span class="ph filepath">PUBLIC_KEY.asc</span> (GPG public key) file.</span>
+                <div class="itemgroup info">The location of the file is as
+                    follows:<p class="lines" id="install_grafana_plugin__lines_bjx_z35_lzb"><a class="xref" href="https://github.com/IBM/RMF/blob/main/grafana/rmf-app/PUBLIC_KEY.asc" target="_blank" rel="external noopener">https://github.com/IBM/RMF/blob/main/grafana/rmf-app/PUBLIC_KEY.asc</a></p></div>
+            </li><li class="li step stepexpand">
+                <span class="ph cmd">Follow the instructions in the <a class="xref" href="https://www.gnupg.org/gph/en/manual.html#AEN84" target="_blank" rel="external noopener">Importing a public key</a> section of the GPG user
+                    guide.</span>
+            </li><li class="li step stepexpand">
+                <span class="ph cmd">Download the <span class="ph">IBM RMF for z/OS Grafana</span> plugin
+                        (<span class="ph filepath">ibm-rmf-grafana-x.y.z.zip</span>) and signature file
+                        (<span class="ph filepath">ibm-rmf-grafana-x.y.z.zip.asc</span>) from <a class="xref" href="https://github.com/IBM/RMF/releases" target="_blank" rel="external noopener">https://github.com/IBM/RMF/releases</a>.</span>
+            </li><li class="li step stepexpand">
+                <span class="ph cmd">Run the following command to verify the signature:</span>
+                <div class="itemgroup info">
+                    <pre class="pre codeblock" id="install_grafana_plugin__codeblock_mch_3h5_lzb"><code>gpg --verify <var class="keyword varname">ibm-rmf-grafana-x.y.z.zip.asc</var> <var class="keyword varname">ibm-rmf-grafana-x.y.z.zip</var></code></pre>
+                    <p class="p">Where <code class="ph codeph"><var class="keyword varname">x.y.z</var></code> is the version number of the
+                            <span class="ph">IBM RMF for z/OS Grafana</span> plugin.</p>
+                    <p class="p">For more information, refer to the <a class="xref" href="https://www.gnupg.org/gph/en/manual.html#AEN161" target="_blank" rel="external noopener">GPG</a> user guide.</p>
+                </div>
+            </li></ol></section>
+        <section class="section result" id="install_grafana_plugin__result_cfk_yxq_pyb"><p class="p"></p>You have installed the <span class="ph">IBM RMF for z/OS Grafana</span> plugin. You can find the <span class="ph uicontrol">IBM RMF</span> plugin listed under the
+                <span class="ph uicontrol">Apps</span> section.<p class="p"><img class="image" id="install_grafana_plugin__image_kjp_kkr_ryb" src="images/app_section.png"></p></section>
+        <section class="section postreq" id="install_grafana_plugin__postreq_gxg_1yq_pyb">You can add an RMF data source to fetch data from <span class="ph">Distributed Data Server</span>s (<span class="ph">DDS</span>). See <a class="xref" href="create_datasources.html" title="To access RMF Monitor III metrics in Grafana, you need to connect to the Distributed Data Servers by adding an RMF data source.">Creating RMF data sources</a>.</section>
+    </div>
+    <nav role="navigation" class="related-links"><div class="familylinks"><div class="previouslink"><strong>Previous topic:</strong> <a class="link" href="rn.html" title="This article covers the new features, system requirements, and known issues of the IBM RMF for z/OS Grafana plugin.">Release notes</a></div><div class="nextlink"><strong>Next topic:</strong> <a class="link" href="create_datasources.html" title="To access RMF Monitor III metrics in Grafana, you need to connect to the Distributed Data Servers by adding an RMF data source.">Creating RMF data sources</a></div></div><div class="linklist relinfo"><strong>Related information</strong><br><ul class="linklist"><li class="linklist"><a class="link" href="https://grafana.com/docs/grafana/latest/cli/" target="_blank" rel="external noopener">Grafana CLI documentation</a></li><li class="linklist"><a class="link" href="https://docs.docker.com/engine/reference/commandline/run/" target="_blank" rel="external noopener">docker run command</a></li><li class="linklist"><a class="link" href="https://docs.docker.com/engine/reference/commandline/volume_create/" target="_blank" rel="external noopener">docker volume create command</a></li></ul></div></nav>
+</article></main></body></html>

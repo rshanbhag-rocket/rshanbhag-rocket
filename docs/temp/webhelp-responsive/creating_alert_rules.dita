@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?><?workdir /C:\Git\zos_dev\RMF\V3R1\rmf\grafana\temp\webhelp-responsive?><?workdir-uri file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/temp/webhelp-responsive/?><?path2project?><?path2project-uri ./?><?path2rootmap-uri ./?><?doctype-public -//OASIS//DTD DITA Task//EN?><?doctype-system task.dtd?><task xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="creating_alert_rules" xml:lang="en-us" ditaarch:DITAArchVersion="1.3" domains="(topic task) (topic abbrev-d) a(props deliveryTarget) (topic equation-d) (topic hazard-d) (topic hi-d) (topic indexing-d) (topic markup-d) (topic mathml-d) (topic pr-d) (topic relmgmt-d) (topic sw-d) (topic svg-d) (topic ui-d) (topic ut-d) (topic markup-d xml-d) (topic task strictTaskbody-c)" class="- topic/topic task/task " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="task:1;3:50" specializations="@props/deliveryTarget">
+    <title class="- topic/title " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="title:1;4:12">Creating alert rules</title>
+    <shortdesc class="- topic/shortdesc " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="shortdesc:1;5:16">You can create an alert rule to determine when an alert should be triggered. It
+        comprises one or more queries and expressions over which the condition must be satisfied for
+        the alert to start triggering.</shortdesc>
+    <taskbody class="- topic/body task/taskbody " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="taskbody:1;8:15">
+        <prereq id="prereq_otz_tp3_tyb" class="- topic/section task/prereq " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="prereq:1;9:41"><ph class="- topic/ph " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/conref.dita" xtrc="ph:9;23:40">You must have completed the following tasks:</ph><ul id="ul_f3f_vp3_tyb" class="- topic/ul " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="ul:1;10:37">
+                <li class="- topic/li " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/conref.dita" xtrc="li:2;29:45">Installed the <ph class="- topic/ph " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/conref.dita" xtrc="ph:1;7:33"><tm tmtype="reg" class="- topic/tm " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/conref.dita" xtrc="tm:1;7:50">IBM</tm> RMF for z/OS Grafana App</ph> plugin. See <xref href="install_grafana_plugin.dita" class="- topic/xref " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/conref.dita" xtrc="xref:1;31:65" type="task"><?ditaot gentext?>Installing the plugin on Grafana<?ditaot genshortdesc?><desc class="- topic/desc ">You must install the <ph class="- topic/ph " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/conref.dita" xtrc="ph:1;7:33"><tm tmtype="reg" class="- topic/tm " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/conref.dita" xtrc="tm:1;7:50">IBM</tm> RMF for z/OS Grafana App</ph> plugin to analyze         and visualize RMF Monitor III metrics and reports.</desc></xref>.</li>
+                <li class="- topic/li " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/conref.dita" xtrc="li:4;40:45">Added a RMF data source in Grafana. See <xref href="create_datasources.dita" class="- topic/xref " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/conref.dita" xtrc="xref:3;41:61" type="task"><?ditaot gentext?>Creating RMF data sources<?ditaot genshortdesc?><desc class="- topic/desc ">To access RMF Monitor III metrics in Grafana, you need to connect to the <ph class="- topic/ph " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/conref.dita" xtrc="ph:4;10:30">Distributed Data Server</ph>s by adding an RMF data source.</desc></xref>.</li>
+                <li class="- topic/li " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/conref.dita" xtrc="li:5;42:45">Understood the query language of the RMF <ph class="- topic/ph " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/conref.dita" xtrc="ph:1;7:33"><tm tmtype="reg" class="- topic/tm " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/conref.dita" xtrc="tm:1;7:50">IBM</tm> RMF for z/OS Grafana App</ph> data source. See <xref href="query_lang.dita" class="- topic/xref " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/conref.dita" xtrc="xref:4;44:53" type="concept"><?ditaot gentext?>Query languages<?ditaot genshortdesc?><desc class="- topic/desc ">In Grafana, queries are essential for fetching and transforming data from RMF data         sources.</desc></xref>.</li>
+            </ul></prereq>
+        <steps class="- topic/ol task/steps " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="steps:1;15:16">
+            <step class="- topic/li task/step " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="step:1;16:19">
+                <cmd class="- topic/ph task/cmd " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="cmd:1;17:22">Navigate to the left-side menu, and then click
+                    <uicontrol class="+ topic/ph ui-d/uicontrol " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="uicontrol:1;18:32">Alerting</uicontrol>.</cmd>
+                <info class="- topic/itemgroup task/info " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="info:1;19:23">
+                    <note id="note_sl5_mlb_fzb" class="- topic/note " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/conref.dita" xtrc="note:2;83:41">The navigation of the user interface can differ based on the
+                Grafana version that is currently installed.</note>
+                </info>
+            </step>
+            <step class="- topic/li task/step " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="step:2;23:19">
+                <cmd class="- topic/ph task/cmd " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="cmd:2;24:22">Click <uicontrol class="+ topic/ph ui-d/uicontrol " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="uicontrol:2;24:39">Manage alert rules</uicontrol> from the <wintitle class="+ topic/keyword ui-d/wintitle " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="wintitle:1;24:89">Alert
+                        rules</wintitle> section.</cmd>
+            </step>
+            <step class="- topic/li task/step " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="step:3;27:19">
+                <cmd class="- topic/ph task/cmd " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="cmd:3;28:22">Click <uicontrol class="+ topic/ph ui-d/uicontrol " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="uicontrol:3;28:39">Create alert rule</uicontrol>.</cmd>
+            </step>
+            <step class="- topic/li task/step " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="step:4;30:19">
+                <cmd class="- topic/ph task/cmd " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="cmd:4;31:22">Enter a name to label the alert rule in the <uicontrol class="+ topic/ph ui-d/uicontrol " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="uicontrol:4;31:77">Rule name</uicontrol>
+                    field.</cmd>
+            </step>
+            <step class="- topic/li task/step " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="step:5;34:19">
+                <cmd class="- topic/ph task/cmd " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="cmd:5;35:22">Select <uicontrol class="+ topic/ph ui-d/uicontrol " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="uicontrol:5;35:40">Grafana managed alert</uicontrol> as the alert rule
+                    type.</cmd>
+            </step>
+            <step class="- topic/li task/step " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="step:6;38:19">
+                <cmd class="- topic/ph task/cmd " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="cmd:6;39:22">Select a data source from the list.</cmd>
+            </step>
+            <step class="- topic/li task/step " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="step:7;41:19">
+                <cmd class="- topic/ph task/cmd " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="cmd:7;42:22">Click the <uicontrol class="+ topic/ph ui-d/uicontrol " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="uicontrol:6;42:43">Time Picker</uicontrol> drop-down list and apply the
+                    relative time range.</cmd>
+            </step>
+            <step class="- topic/li task/step " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="step:8;45:19">
+                <cmd class="- topic/ph task/cmd " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="cmd:8;46:22">Enter a query in the query language of the RMF data source to get the data you
+                    want to measure.</cmd>
+                <info class="- topic/itemgroup task/info " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="info:2;48:23">
+                    <note id="note_bth_4q3_tyb" class="- topic/note " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="note:2;49:49">You can click <uicontrol class="+ topic/ph ui-d/uicontrol " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="uicontrol:7;49:74">+ Add query</uicontrol> to
+                        add multiple queries for the alert rule.</note>
+                </info>
+            </step>
+            <step class="- topic/li task/step " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="step:9;53:19">
+                <cmd class="- topic/ph task/cmd " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="cmd:9;54:22">Add an expression.</cmd>
+                <info class="- topic/itemgroup task/info " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="info:3;55:23">
+                    <note id="note_dqz_tq3_tyb" type="other" othertype="Notes" class="- topic/note " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="note:3;56:80">
+                        <ul id="ul_icw_5q3_tyb" class="- topic/ul " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="ul:2;57:49">
+                            <li class="- topic/li " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="li:4;58:33">An alert rule triggers only when certain conditions are met.</li>
+                            <li class="- topic/li " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="li:5;59:33">You can click <uicontrol class="+ topic/ph ui-d/uicontrol " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="uicontrol:8;59:58">+ Add expression</uicontrol> to add
+                                multiple expressions for the alert rule.</li>
+                        </ul>
+                    </note>
+                </info>
+            </step>
+            <step importance="optional" class="- topic/li task/step " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="step:10;65:41">
+                <cmd class="- topic/ph task/cmd " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="cmd:10;66:22">Click <uicontrol class="+ topic/ph ui-d/uicontrol " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="uicontrol:9;66:39">Preview</uicontrol> to verify the applied expression is
+                    correct.</cmd>
+            </step>
+            <step class="- topic/li task/step " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="step:11;69:19">
+                <cmd class="- topic/ph task/cmd " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="cmd:11;70:22">Click <uicontrol class="+ topic/ph ui-d/uicontrol " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="uicontrol:10;70:39">Make this the alert condition</uicontrol> on the query or
+                    expression to set selected query or expression as alert condition.</cmd>
+            </step>
+            <step class="- topic/li task/step " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="step:12;73:19">
+                <cmd class="- topic/ph task/cmd " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="cmd:12;74:22">Perform the following steps to determine how often an alert rule should be
+                    checked and quickly it must change its state:</cmd>
+                <substeps id="substeps_kx5_br3_tyb" class="- topic/ol task/substeps " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="substeps:1;76:53">
+                    <substep class="- topic/li task/substep " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="substep:1;77:30">
+                        <cmd class="- topic/ph task/cmd " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="cmd:13;78:30">Select a folder from the drop-down list for the rule.</cmd>
+                        <info class="- topic/itemgroup task/info " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="info:4;79:31">Alternatively, you can click <uicontrol class="+ topic/ph ui-d/uicontrol " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="uicontrol:11;79:71">+Add new</uicontrol> to create
+                            a folder.</info>
+                    </substep>
+                    <substep class="- topic/li task/substep " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="substep:2;82:30">
+                        <cmd class="- topic/ph task/cmd " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="cmd:14;83:30">Select an evaluation group from the drop-down list.</cmd>
+                        <info class="- topic/itemgroup task/info " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="info:5;84:31">Alternatively, you can type a name to create an evaluation
+                            group.</info>
+                    </substep>
+                    <substep class="- topic/li task/substep " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="substep:3;87:30">
+                        <cmd class="- topic/ph task/cmd " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="cmd:15;88:30">Enter the evaluation interval for the group in the <uicontrol class="+ topic/ph ui-d/uicontrol " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="uicontrol:12;88:92">Evaluate
+                                every</uicontrol> field, if you create a evaluation group.</cmd>
+                    </substep>
+                </substeps>
+            </step>
+            <step class="- topic/li task/step " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="step:13;93:19">
+                <cmd class="- topic/ph task/cmd " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="cmd:16;94:22">Enter a value in the <uicontrol class="+ topic/ph ui-d/uicontrol " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="uicontrol:13;94:54">for</uicontrol> field to specify a pending
+                    period.</cmd>
+                <info class="- topic/itemgroup task/info " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="info:6;96:23">The pending period refers to the time frame in which an alert rule can violate
+                    the condition before it triggers the alert. When a condition is met, the alert
+                    enters the <systemoutput class="+ topic/ph sw-d/systemoutput " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="systemoutput:1;98:46">Pending</systemoutput> state. If the situation remains
+                    active for the specified duration, the alert transitions to the Firing state
+                    before returning to the <systemoutput class="+ topic/ph sw-d/systemoutput " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="systemoutput:2;100:59">Normal</systemoutput> state.</info>
+            </step>
+            <step class="- topic/li task/step " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="step:14;102:19">
+                <cmd class="- topic/ph task/cmd " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="cmd:17;103:22">Set up alerting behavior if no data or error is found in the
+                        <wintitle class="+ topic/keyword ui-d/wintitle " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="wintitle:2;104:35">Configure no data and error handling</wintitle> section.</cmd>
+            </step>
+            <step class="- topic/li task/step " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="step:15;106:19">
+                <cmd class="- topic/ph task/cmd " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="cmd:18;107:22">Click <uicontrol class="+ topic/ph ui-d/uicontrol " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="uicontrol:14;107:39">Save</uicontrol> to save your changes.</cmd>
+            </step>
+        </steps>
+        <result id="result_y1f_nr3_tyb" class="- topic/section task/result " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="result:1;110:41">You have created the alert rule.</result>
+        <postreq id="postreq_gzf_qr3_tyb" class="- topic/section task/postreq " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="postreq:1;111:43">You can configure the contact points to receive
+            notifications when an alert rule is triggered. See <xref href="config_contact_points.dita" class="- topic/xref " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="xref:1;113:52" type="task"><?ditaot gentext?>Configuring contact points<?ditaot genshortdesc?><desc class="- topic/desc ">You can set up contact points to specify how contacts receive notifications when an         alert rule is triggered.</desc></xref>.<p class="- topic/p " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="p:1;113:56">For more information about expressions, refer
+                to the <xref href="https://grafana.com/docs/grafana/latest/panels-visualizations/query-transform-data/expression-queries/" format="html" scope="external" class="- topic/xref " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="xref:2;116:52"><?ditaot usertext?>Write expression queries</xref> topic in the
+                    <cite class="- topic/cite " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="cite:1;117:27">Grafana</cite> documentation.</p><p class="- topic/p " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="p:2;117:63">For more information about configuring
+                no data and error handling, refer to the <xref href="https://grafana.com/docs/grafana-cloud/alerting-and-irm/alerting/alerting-rules/create-grafana-managed-rule/#configure-no-data-and-error-handling" format="html" scope="external" class="- topic/xref " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="xref:3;120:52"><?ditaot usertext?>no data and error handling</xref> section in the
+                    <cite class="- topic/cite " xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/creating_alert_rules.dita" xtrc="cite:2;121:27">Grafana</cite> documentation.</p></postreq>
+    </taskbody>
+<related-links class="- topic/related-links "><linkpool class="- topic/linkpool " xtrc="topicref:14;35:57" xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/grafana.ditamap"><link class="- topic/link " format="dita" href="alerts.dita" mapclass="- map/topicref " role="parent" scope="local" type="concept" xtrc="topicref:13;34:82" xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/grafana.ditamap"><?ditaot usertext?><linktext class="- topic/linktext "><?ditaot gentext?>Introduction to Alerts</linktext><?ditaot genshortdesc?><desc class="- topic/desc ">Grafana Alerting feature provides a reliable solution to detect and respond to system         issues in real time.</desc></link><link class="- topic/link " format="dita" href="alerts.dita" mapclass="- map/topicref " role="previous" scope="local" type="concept" xtrc="topicref:13;34:82" xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/grafana.ditamap"><?ditaot usertext?><linktext class="- topic/linktext "><?ditaot gentext?>Introduction to Alerts</linktext><?ditaot genshortdesc?><desc class="- topic/desc ">Grafana Alerting feature provides a reliable solution to detect and respond to system         issues in real time.</desc></link><link class="- topic/link " format="dita" href="config_contact_points.dita" mapclass="- map/topicref " role="next" scope="local" type="task" xtrc="topicref:15;36:58" xtrf="file:/C:/Git/zos_dev/RMF/V3R1/rmf/grafana/grafana.ditamap"><?ditaot usertext?><linktext class="- topic/linktext "><?ditaot gentext?>Configuring contact points</linktext><?ditaot genshortdesc?><desc class="- topic/desc ">You can set up contact points to specify how contacts receive notifications when an         alert rule is triggered.</desc></link></linkpool></related-links></task>
